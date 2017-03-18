@@ -1,9 +1,11 @@
 import {render} from 'inferno'
 
-import {Router, Route} from 'inferno-router'
+import {Router, Route, Redirect} from 'inferno-router'
 import createBrowserHistory from 'history/createBrowserHistory'
 
 import App from './App'
+import Schedule from './Schedule'
+import Edit from './Edit'
 
 if (module.hot) {
     require('inferno-devtools')
@@ -11,16 +13,20 @@ if (module.hot) {
 
 const browserHistory = createBrowserHistory()
 
-const TestComponent = () => {
-    <div style={{width: '50px', height: '50px', background: '#000'}}></div>
-}
-
 const routes = (
     <Router history={browserHistory}>
         <Route component={App}>
+            <Redirect
+                from='/'
+                to='/schedule'
+            />
+            <Route
+                path='/schedule'
+                component={Schedule}
+            />
             <Route 
-                path='/'
-                component={TestComponent}    
+                path='/edit'
+                component={Edit}    
             />
         </Route>
     </Router>

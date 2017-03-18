@@ -1,8 +1,9 @@
-export default function App({children}) {
+const App = ({children}) => {
     return (
         <div>
-            <h1>Test</h1>
             {children}
         </div>
     )
 }
+
+export default App

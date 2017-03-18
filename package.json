@@ -26,6 +26,7 @@
     "eslint": "^3.17.1",
     "glob": "^7.1.1",
     "inferno-devtools": "^1",
+    "jss": "^6.5.0",
     "url": "^0.11.0",
     "webpack": "2.2.1",
     "webpack-dev-server": "2.4.1"
