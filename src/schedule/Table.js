@@ -2,8 +2,8 @@ import Component from 'inferno-component'
 import jss from 'jss'
 import {observer} from 'inferno-mobx'
 
-import ScheduleStore from './ScheduleStore'
-import Schools from './Schools'
+import ScheduleStore from 'schedule-app/schedule/ScheduleStore'
+import Schools from 'schedule-app/schedule/Schools'
 
 @observer
 export default class Table extends Component {

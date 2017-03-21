@@ -5,15 +5,21 @@
                 ["es2015", {"loose": true, "modules": false}], "stage-0"
             ],
             "plugins": [
+                ["module-resolver", {
+                    "root": ["./"],
+                    "alias": {
+                        "schedule-app": "./src"
+                    }
+                }],
                 "transform-decorators-legacy",
-                "babel-plugin-syntax-jsx",
-                ["babel-plugin-inferno", {"imports": true}]
+                "syntax-jsx",
+                ["inferno", {"imports": true}]
           ]
         }
     },
     "plugins": [
-        "babel-plugin-syntax-jsx",
-        ["babel-plugin-inferno", {"imports": true}],
+        "syntax-jsx",
+        ["inferno", {"imports": true}],
         "transform-decorators-legacy"
     ]
 }

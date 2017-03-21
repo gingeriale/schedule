@@ -1,7 +1,7 @@
 import Component from 'inferno-component'
 import jss from 'jss'
 
-import Header from './common/Header'
+import Header from 'schedule-app/common/Header'
 
 const styles = {
     active: {

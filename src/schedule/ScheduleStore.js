@@ -1,6 +1,6 @@
 import {observable, action} from 'mobx'
 
-import Schools from './Schools'
+import Schools from 'schedule-app/schedule/Schools'
 
 class ScheduleStore {
 
