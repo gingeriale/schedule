@@ -1,4 +1,4 @@
-/*const App = ({children}) => {
+const App = ({children}) => {
     return (
         <div>
             {children}
@@ -6,10 +6,10 @@
     )
 }
 
-export default App*/
+export default App
 
 
-import Component from 'inferno-component'
+/*import Component from 'inferno-component'
 
 import Header from './common/Header'
 
@@ -23,4 +23,4 @@ export default class App extends Component {
         )
     }
 
-}
+}*/

@@ -2,20 +2,17 @@ import Component from 'inferno-component'
 import jss from 'jss'
 
 import Header from './common/Header'
-
-const styles = {
-    active: {
-        color: 'red'
-    }
-}
+import Table from './schedule/Table'
 
 export default class Schedule extends Component {
 
     render() {
-        const {classes} = jss.createStyleSheet(styles).attach()
 
         return (
-            null
+            <div>
+                <Header/>
+                <Table/>
+            </div>
         )
     }
 
