@@ -2,44 +2,29 @@ import Component from 'inferno-component'
 import jss from 'jss'
 import cn from 'classnames'
 
-export default class Header extends Component {
+import AppStore from 'schedule-app/common/AppStore'
+import HeaderItems from 'schedule-app/common/HeaderItems'
 
-    constructor() {
-        super()
-        this.state = {
-            activeSchedule: true,
-            activeEdit: false
-        }
-    }
+export default class Header extends Component {
 
     render() {
         const {classes} = jss.createStyleSheet(styles).attach()
-        const {
-            activeSchedule,
-            activeEdit
-        } = this.state
 
         return (
             <div>
                 <a 
                     href="/schedule"
-                    onClick={() => this.setState({
-                        activeSchedule: true,
-                        activeEdit: false
-                    })}
+                    onClick={() => AppStore.setHeader(HeaderItems.SCHEDULE)}
                 >
-                    <span className={cn(`${classes.header}`, {[classes.active]: activeSchedule})}>
+                    <span className={cn(`${classes.header}`, {[classes.active]: AppStore.header === HeaderItems.SCHEDULE})}>
                         Расписание
                     </span>
                 </a>
                 <a 
                     href="/edit"
-                    onClick={() => this.setState({
-                        activeSchedule: false,
-                        activeEdit: true
-                    })}
+                    onClick={() => AppStore.setHeader(HeaderItems.EDIT)}
                 >
-                    <span className={cn(`${classes.header}`, {[classes.active]: activeEdit})}>
+                    <span className={cn(`${classes.header}`, {[classes.active]: AppStore.header === HeaderItems.EDIT})}>
                         Редактирование
                     </span>
                 </a>
