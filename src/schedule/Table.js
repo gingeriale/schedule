@@ -16,14 +16,33 @@ export default class Table extends Component {
                 <span onClick={() => ScheduleStore.showSchool(Schools.DESIGN)}>Design</span>
                 <div>
                     {ScheduleStore.school === Schools.INTERFACE ? (
-                        <div>interface</div>
+                        this.renderContent(Schools.INTERFACE)
                     ) : ScheduleStore.school === Schools.MOBILE ? (
-                        <div>mobile</div>
+                        this.renderContent(Schools.MOBILE)
                     ) : (
-                        <div>design</div>
+                        this.renderContent(Schools.DESIGN)
                     )}
                 </div>
             </div>
+        )
+    }
+
+    renderContent(school) {
+        const content = ScheduleStore.content.get(school)
+        return (
+            <table>
+                {Object.keys(content).map(lecture => {
+                    return (
+                        <tr>
+                            {Object.keys(content[lecture]).map(info => {
+                                return (
+                                    <td>{content[lecture][info]}</td>
+                                )
+                            })}
+                        </tr>
+                    )
+                })}
+            </table>
         )
     }
 
