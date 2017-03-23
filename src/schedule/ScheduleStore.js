@@ -1,12 +1,12 @@
 import {observable, action} from 'mobx'
 
 import Schools from 'schedule-app/schedule/Schools'
-import data from 'edit-lib/Data'
+import schoolsDetails from 'edit-lib/schoolsDetails'
 
 class ScheduleStore {
 
     @observable
-    content = observable.map(data)
+    content = observable.map(schoolsDetails)
 
     @observable 
     school = Schools.INTERFACE
