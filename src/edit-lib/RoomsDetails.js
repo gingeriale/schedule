@@ -1,18 +1,23 @@
 const roomsDetails = {
     blueWhale: {
-        name: 'Синий Кит',
+        name: 'Синяя',
         capacity: 50,
         location: '2 этаж'
     },
     redRabbit: {
-        name: 'Красный Кролик',
+        name: 'Красная',
         capacity: 60,
         location: '3 этаж'
     },
     yellowHornbill: {
-        name: 'Желтый Носорог',
-        capacity: 130,
+        name: 'Желтая',
+        capacity: 40,
         location: '5 этаж'
+    },
+    large: {
+        name: 'Просторная',
+        capacity: 130,
+        location: 'мансарда'
     }
 }
 
