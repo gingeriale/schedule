@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "date-fns": "^1.28.1",
     "history": "^4.6.0",
     "inferno": "^1",
     "inferno-component": "^1",

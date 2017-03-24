@@ -9,7 +9,6 @@ class AppStore {
 
     @action
     setHeader(header) {
-        console.log(header)
         this.header = header
     }
 

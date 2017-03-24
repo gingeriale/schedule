@@ -5,7 +5,8 @@ const schoolsDetails = {
             theme: 'Адаптивная вёрстка',
             speaker: 'Дмитрий Душкин',
             room: 'room1',
-            date: 'date1',
+            date: new Date(2016, 1, 25, 18, 0),
+            time: new Date(2016, 1, 25, 18, 0),
             materials: 'materials1',
             video: 'video1'
         },
@@ -14,7 +15,8 @@ const schoolsDetails = {
             theme: 'Работа с сенсорным пользовательским вводом',
             speaker: 'Дмитрий Душкин',
             room: 'room2',
-            date: 'date2',
+            date: new Date(2016, 1, 25, 18, 0),
+            time: new Date(2016, 1, 25, 18, 0),
             materials: 'materials2',
             video: 'video2'
         },
@@ -23,7 +25,8 @@ const schoolsDetails = {
             theme: 'Особенности проектирования мобильных интерфейсов',
             speaker: 'Васюнин Николай',
             room: 'room2',
-            date: 'date2',
+            date: new Date(2016, 1, 25, 18, 0),
+            time: new Date(2016, 1, 25, 18, 0),
             materials: 'materials2',
             video: 'video2'
         },
@@ -32,7 +35,8 @@ const schoolsDetails = {
             theme: 'Нативные приложения на веб-технологиях',
             speaker: 'Сергей Бережной',
             room: 'room2',
-            date: 'date2',
+            date: new Date(2016, 1, 25, 18, 0),
+            time: new Date(2016, 1, 25, 18, 0),
             materials: 'materials2',
             video: 'video2'
         },
@@ -41,7 +45,8 @@ const schoolsDetails = {
             theme: 'Природа операционных систем',
             speaker: 'Васюнин Николай',
             room: 'room2',
-            date: 'date2',
+            date: new Date(2016, 1, 25, 18, 0),
+            time: new Date(2016, 1, 25, 18, 0),
             materials: 'materials2',
             video: 'video2'
         },
@@ -50,7 +55,8 @@ const schoolsDetails = {
             theme: 'Клиентская оптимизация: мобильные устройства и инструменты',
             speaker: 'Иван Карев',
             room: 'room2',
-            date: 'date2',
+            date: new Date(2016, 1, 25, 18, 0),
+            time: new Date(2016, 1, 25, 18, 0),
             materials: 'materials2',
             video: 'video2'
         }
@@ -61,7 +67,8 @@ const schoolsDetails = {
             theme: 'Java Blitz (Часть 1)',
             speaker: 'Эдуард Мацуков',
             room: 'room',
-            date: 'date',
+            date: new Date(2016, 1, 25, 18, 0),
+            time: new Date(2016, 1, 25, 18, 0),
             materials: 'materials',
             video: 'video'
         },
@@ -70,7 +77,8 @@ const schoolsDetails = {
             theme: 'Git & Workflow',
             speaker: 'Дмитрий Складнов',
             room: 'room',
-            date: 'date',
+            date: new Date(2016, 1, 25, 18, 0),
+            time: new Date(2016, 1, 25, 18, 0),
             materials: 'materials',
             video: 'video'
         },
@@ -79,7 +87,8 @@ const schoolsDetails = {
             theme: 'Особенности проектирования мобильных интерфейсов',
             speaker: 'Васюнин Николай',
             room: 'room',
-            date: 'date',
+            date: new Date(2016, 1, 25, 18, 0),
+            time: new Date(2016, 1, 25, 18, 0),
             materials: 'materials',
             video: 'video'
         },
@@ -97,7 +106,8 @@ const schoolsDetails = {
             theme: 'Природа операционных систем',
             speaker: 'Васюнин Николай',
             room: 'room',
-            date: 'date',
+            date: new Date(2016, 1, 25, 18, 0),
+            time: new Date(2016, 1, 25, 18, 0),
             materials: 'materials',
             video: 'video'
         },
@@ -106,7 +116,8 @@ const schoolsDetails = {
             theme: 'ViewGroup',
             speaker: 'Алексей Щербинин',
             room: 'room',
-            date: 'date',
+            date: new Date(2016, 1, 25, 18, 0),
+            time: new Date(2016, 1, 25, 18, 0),
             materials: 'materials',
             video: 'video'
         }
@@ -117,7 +128,8 @@ const schoolsDetails = {
             theme: 'Идея, исследование, концепт (Часть 1)',
             speaker: 'Антон Тен',
             room: 'room',
-            date: 'date',
+            date: new Date(2016, 1, 25, 18, 0),
+            time: new Date(2016, 1, 25, 18, 0),
             materials: 'materials',
             video: 'video'
         },
@@ -126,7 +138,8 @@ const schoolsDetails = {
             theme: 'Идея, исследование, концепт (Часть 2)',
             speaker: 'Антон Тен',
             room: 'room',
-            date: 'date',
+            date: new Date(2016, 1, 25, 18, 0),
+            time: new Date(2016, 1, 25, 18, 0),
             materials: 'materials',
             video: 'video'
         },
@@ -135,7 +148,8 @@ const schoolsDetails = {
             theme: 'Особенности проектирования мобильных интерфейсов',
             speaker: 'Васюнин Николай',
             room: 'room',
-            date: 'date',
+            date: new Date(2016, 1, 25, 18, 0),
+            time: new Date(2016, 1, 25, 18, 0),
             materials: 'materials',
             video: 'video'
         },
@@ -144,7 +158,8 @@ const schoolsDetails = {
             theme: 'Продукт и платформа',
             speaker: 'Сергей Калабин',
             room: 'room',
-            date: 'date',
+            date: new Date(2016, 1, 25, 18, 0),
+            time: new Date(2016, 1, 25, 18, 0),
             materials: 'materials',
             video: 'video'
         },
@@ -153,7 +168,8 @@ const schoolsDetails = {
             theme: 'Природа операционных систем',
             speaker: 'Васюнин Николай',
             room: 'room',
-            date: 'date',
+            date: new Date(2016, 1, 25, 18, 0),
+            time: new Date(2016, 1, 25, 18, 0),
             materials: 'materials',
             video: 'video'
         },
@@ -162,7 +178,8 @@ const schoolsDetails = {
             theme: 'Прототипирование как процесс',
             speaker: 'Сергей Томилов',
             room: 'room',
-            date: 'date',
+            date: new Date(2016, 1, 25, 18, 0),
+            time: new Date(2016, 1, 25, 18, 0),
             materials: 'materials',
             video: 'video'
         }

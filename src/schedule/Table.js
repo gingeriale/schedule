@@ -4,6 +4,7 @@ import {observer} from 'inferno-mobx'
 
 import ScheduleStore from 'schedule-app/schedule/ScheduleStore'
 import Schools from 'schedule-app/schedule/Schools'
+import formatDateTime from 'schedule-app/common/util/formatDateTime'
 
 @observer
 export default class Table extends Component {
@@ -29,9 +30,10 @@ export default class Table extends Component {
 
     renderContent(school) {
         const content = ScheduleStore.content.get(school)
+        const formattedContent = formatDateTime(content)
         return (
             <table>
-                {Object.keys(content).map(lecture => {
+                {Object.keys(formattedContent).map(lecture => {
                     return (
                         <tr>
                             {Object.keys(content[lecture]).map(info => {
