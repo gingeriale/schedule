@@ -1,3 +1,6 @@
+import {format} from 'date-fns'
+import ru from 'date-fns/locale/ru'
+
 const schoolsDetails = {
     INTERFACE: {
         1: {
@@ -6,7 +9,8 @@ const schoolsDetails = {
             speaker: 'Дмитрий Душкин',
             room: 'Синяя',
             date: new Date(2016, 1, 25, 18, 0),
-            time: new Date(2016, 1, 25, 18, 0),
+            dateView: format(new Date(2016, 1, 25, 18, 0), 'DD MMMM YYYY', {locale: ru}),
+            timeView: format(new Date(2016, 1, 25, 18, 0), 'HH:mm', {locale: ru}),
             materials: 'materials1',
             video: 'video1'
         },
@@ -16,7 +20,8 @@ const schoolsDetails = {
             speaker: 'Дмитрий Душкин',
             room: 'Синяя',
             date: new Date(2016, 1, 25, 18, 0),
-            time: new Date(2016, 1, 25, 18, 0),
+            dateView: format(new Date(2016, 1, 25, 18, 0), 'DD MMMM YYYY', {locale: ru}),
+            timeView: format(new Date(2016, 1, 25, 18, 0), 'HH:mm', {locale: ru}),
             materials: 'materials2',
             video: 'video2'
         },
@@ -26,7 +31,8 @@ const schoolsDetails = {
             speaker: 'Васюнин Николай',
             room: 'Просторная',
             date: new Date(2016, 1, 25, 18, 0),
-            time: new Date(2016, 1, 25, 18, 0),
+            dateView: format(new Date(2016, 1, 25, 18, 0), 'DD MMMM YYYY', {locale: ru}),
+            timeView: format(new Date(2016, 1, 25, 18, 0), 'HH:mm', {locale: ru}),
             materials: 'materials2',
             video: 'video2'
         },
@@ -36,7 +42,8 @@ const schoolsDetails = {
             speaker: 'Сергей Бережной',
             room: 'Синяя',
             date: new Date(2016, 1, 25, 18, 0),
-            time: new Date(2016, 1, 25, 18, 0),
+            dateView: format(new Date(2016, 1, 25, 18, 0), 'DD MMMM YYYY', {locale: ru}),
+            timeView: format(new Date(2016, 1, 25, 18, 0), 'HH:mm', {locale: ru}),
             materials: 'materials2',
             video: 'video2'
         },
@@ -46,7 +53,8 @@ const schoolsDetails = {
             speaker: 'Васюнин Николай',
             room: 'Просторная',
             date: new Date(2016, 1, 25, 18, 0),
-            time: new Date(2016, 1, 25, 18, 0),
+            dateView: format(new Date(2016, 1, 25, 18, 0), 'DD MMMM YYYY', {locale: ru}),
+            timeView: format(new Date(2016, 1, 25, 18, 0), 'HH:mm', {locale: ru}),
             materials: 'materials2',
             video: 'video2'
         },
@@ -56,7 +64,8 @@ const schoolsDetails = {
             speaker: 'Иван Карев',
             room: 'Синяя',
             date: new Date(2016, 1, 25, 18, 0),
-            time: new Date(2016, 1, 25, 18, 0),
+            dateView: format(new Date(2016, 1, 25, 18, 0), 'DD MMMM YYYY', {locale: ru}),
+            timeView: format(new Date(2016, 1, 25, 18, 0), 'HH:mm', {locale: ru}),
             materials: 'materials2',
             video: 'video2'
         }
@@ -68,7 +77,8 @@ const schoolsDetails = {
             speaker: 'Эдуард Мацуков',
             room: 'Желтая',
             date: new Date(2016, 1, 25, 18, 0),
-            time: new Date(2016, 1, 25, 18, 0),
+            dateView: format(new Date(2016, 1, 25, 18, 0), 'DD MMMM YYYY', {locale: ru}),
+            timeView: format(new Date(2016, 1, 25, 18, 0), 'HH:mm', {locale: ru}),
             materials: 'materials',
             video: 'video'
         },
@@ -78,7 +88,8 @@ const schoolsDetails = {
             speaker: 'Дмитрий Складнов',
             room: 'Желтая',
             date: new Date(2016, 1, 25, 18, 0),
-            time: new Date(2016, 1, 25, 18, 0),
+            dateView: format(new Date(2016, 1, 25, 18, 0), 'DD MMMM YYYY', {locale: ru}),
+            timeView: format(new Date(2016, 1, 25, 18, 0), 'HH:mm', {locale: ru}),
             materials: 'materials',
             video: 'video'
         },
@@ -88,7 +99,8 @@ const schoolsDetails = {
             speaker: 'Васюнин Николай',
             room: 'Просторная',
             date: new Date(2016, 1, 25, 18, 0),
-            time: new Date(2016, 1, 25, 18, 0),
+            dateView: format(new Date(2016, 1, 25, 18, 0), 'DD MMMM YYYY', {locale: ru}),
+            timeView: format(new Date(2016, 1, 25, 18, 0), 'HH:mm', {locale: ru}),
             materials: 'materials',
             video: 'video'
         },
@@ -98,7 +110,8 @@ const schoolsDetails = {
             speaker: 'Роман Григорьев',
             room: 'Желтая',
             date: new Date(2016, 1, 25, 18, 0),
-            time: new Date(2016, 1, 25, 18, 0),
+            dateView: format(new Date(2016, 1, 25, 18, 0), 'DD MMMM YYYY', {locale: ru}),
+            timeView: format(new Date(2016, 1, 25, 18, 0), 'HH:mm', {locale: ru}),
             materials: 'materials',
             video: 'video'
         },
@@ -108,7 +121,8 @@ const schoolsDetails = {
             speaker: 'Васюнин Николай',
             room: 'Просторная',
             date: new Date(2016, 1, 25, 18, 0),
-            time: new Date(2016, 1, 25, 18, 0),
+            dateView: format(new Date(2016, 1, 25, 18, 0), 'DD MMMM YYYY', {locale: ru}),
+            timeView: format(new Date(2016, 1, 25, 18, 0), 'HH:mm', {locale: ru}),
             materials: 'materials',
             video: 'video'
         },
@@ -118,7 +132,8 @@ const schoolsDetails = {
             speaker: 'Алексей Щербинин',
             room: 'Желтая',
             date: new Date(2016, 1, 25, 18, 0),
-            time: new Date(2016, 1, 25, 18, 0),
+            dateView: format(new Date(2016, 1, 25, 18, 0), 'DD MMMM YYYY', {locale: ru}),
+            timeView: format(new Date(2016, 1, 25, 18, 0), 'HH:mm', {locale: ru}),
             materials: 'materials',
             video: 'video'
         }
@@ -130,7 +145,8 @@ const schoolsDetails = {
             speaker: 'Антон Тен',
             room: 'Красная',
             date: new Date(2016, 1, 25, 18, 0),
-            time: new Date(2016, 1, 25, 18, 0),
+            dateView: format(new Date(2016, 1, 25, 18, 0), 'DD MMMM YYYY', {locale: ru}),
+            timeView: format(new Date(2016, 1, 25, 18, 0), 'HH:mm', {locale: ru}),
             materials: 'materials',
             video: 'video'
         },
@@ -140,7 +156,8 @@ const schoolsDetails = {
             speaker: 'Антон Тен',
             room: 'Красная',
             date: new Date(2016, 1, 25, 18, 0),
-            time: new Date(2016, 1, 25, 18, 0),
+            dateView: format(new Date(2016, 1, 25, 18, 0), 'DD MMMM YYYY', {locale: ru}),
+            timeView: format(new Date(2016, 1, 25, 18, 0), 'HH:mm', {locale: ru}),
             materials: 'materials',
             video: 'video'
         },
@@ -150,7 +167,8 @@ const schoolsDetails = {
             speaker: 'Васюнин Николай',
             room: 'Просторная',
             date: new Date(2016, 1, 25, 18, 0),
-            time: new Date(2016, 1, 25, 18, 0),
+            dateView: format(new Date(2016, 1, 25, 18, 0), 'DD MMMM YYYY', {locale: ru}),
+            timeView: format(new Date(2016, 1, 25, 18, 0), 'HH:mm', {locale: ru}),
             materials: 'materials',
             video: 'video'
         },
@@ -160,7 +178,8 @@ const schoolsDetails = {
             speaker: 'Сергей Калабин',
             room: 'Красная',
             date: new Date(2016, 1, 25, 18, 0),
-            time: new Date(2016, 1, 25, 18, 0),
+            dateView: format(new Date(2016, 1, 25, 18, 0), 'DD MMMM YYYY', {locale: ru}),
+            timeView: format(new Date(2016, 1, 25, 18, 0), 'HH:mm', {locale: ru}),
             materials: 'materials',
             video: 'video'
         },
@@ -170,7 +189,8 @@ const schoolsDetails = {
             speaker: 'Васюнин Николай',
             room: 'Просторная',
             date: new Date(2016, 1, 25, 18, 0),
-            time: new Date(2016, 1, 25, 18, 0),
+            dateView: format(new Date(2016, 1, 25, 18, 0), 'DD MMMM YYYY', {locale: ru}),
+            timeView: format(new Date(2016, 1, 25, 18, 0), 'HH:mm', {locale: ru}),
             materials: 'materials',
             video: 'video'
         },
@@ -180,7 +200,8 @@ const schoolsDetails = {
             speaker: 'Сергей Томилов',
             room: 'Красная',
             date: new Date(2016, 1, 25, 18, 0),
-            time: new Date(2016, 1, 25, 18, 0),
+            dateView: format(new Date(2016, 1, 25, 18, 0), 'DD MMMM YYYY', {locale: ru}),
+            timeView: format(new Date(2016, 1, 25, 18, 0), 'HH:mm', {locale: ru}),
             materials: 'materials',
             video: 'video'
         }

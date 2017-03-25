@@ -30,10 +30,9 @@ export default class Table extends Component {
 
     renderContent(school) {
         const content = ScheduleStore.content.get(school)
-        const formattedContent = formatDateTime(content)
         return (
             <table>
-                {Object.keys(formattedContent).map(lecture => {
+                {Object.keys(content).map(lecture => {
                     return (
                         <tr>
                             {Object.keys(content[lecture]).map(info => {
