@@ -1,4 +1,5 @@
 import Component from 'inferno-component'
+import {Link} from 'inferno-router'
 import jss from 'jss'
 import cn from 'classnames'
 
@@ -12,22 +13,22 @@ export default class Header extends Component {
 
         return (
             <div>
-                <a 
-                    href="/schedule"
+                <Link 
+                    to="/schedule"
                     onClick={() => AppStore.setHeader(HeaderItems.SCHEDULE)}
                 >
                     <span className={cn(`${classes.header}`, {[classes.active]: AppStore.header === HeaderItems.SCHEDULE})}>
                         Расписание
                     </span>
-                </a>
-                <a 
-                    href="/edit"
+                </Link>
+                <Link 
+                    to="/edit"
                     onClick={() => AppStore.setHeader(HeaderItems.EDIT)}
                 >
                     <span className={cn(`${classes.header}`, {[classes.active]: AppStore.header === HeaderItems.EDIT})}>
                         Редактирование
                     </span>
-                </a>
+                </Link>
             </div>
         )
     }
