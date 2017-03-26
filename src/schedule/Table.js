@@ -4,7 +4,6 @@ import {observer} from 'inferno-mobx'
 
 import ScheduleStore from 'schedule-app/schedule/ScheduleStore'
 import Schools from 'schedule-app/schedule/Schools'
-import formatDateTime from 'schedule-app/common/util/formatDateTime'
 
 @observer
 export default class Table extends Component {
