@@ -35,7 +35,7 @@ export default class Rooms extends Component {
                         value={EditStore.end}
                         onInput={event => EditStore.onEndChange(event.target.value)}
                     />
-                    <div>Показать</div>
+                    <div onClick={() => EditStore.showByBeginEnd()}>Показать</div>
                     {this.renderLectures()}
                 </div>
             </div>
@@ -43,7 +43,7 @@ export default class Rooms extends Component {
     }
 
     renderLectures() {
-        const foundLectures = findLectures(EditStore.room.name)
+        const foundLectures = findLectures(EditStore.room.name, EditStore.beginToShow, EditStore.endToShow)
         return (
             <div>
                 <div>

@@ -13,6 +13,12 @@ class EditStore {
     @observable
     end = ''
 
+    @observable
+    beginToShow = ''
+
+    @observable
+    endToShow = ''
+
     @action
     changeRoomSelection(room) {
         this.room = roomsDetails[room]
@@ -26,6 +32,12 @@ class EditStore {
     @action
     onEndChange(value) {
         this.end = value
+    }
+
+    @action
+    showByBeginEnd() {
+        this.beginToShow = this.begin
+        this.endToShow = this.end
     }
 
 }
