@@ -1,12 +1,16 @@
 import Component from 'inferno-component'
+import {observer} from 'inferno-mobx'
 import jss from 'jss'
 
+import EditStore from 'schedule-app/edit/EditStore'
 import Header from 'schedule-app/common/Header'
 import RoomsChoice from 'schedule-app/edit/RoomsChoice'
 import SchoolsChoice from 'schedule-app/edit/SchoolsChoice'
 import DatesPicker from 'schedule-app/edit/DatesPicker'
+import tabs from 'schedule-app/edit/Tabs'
 import LecturesByRooms from 'schedule-app/edit/LecturesByRooms'
 
+@observer
 export default class Schedule extends Component {
 
     render() {
@@ -14,8 +18,11 @@ export default class Schedule extends Component {
         return (
             <div>
                 <Header/>
-                <RoomsChoice/>
-                <SchoolsChoice/>
+                {EditStore.tab === tabs.ROOM ? (
+                    <RoomsChoice/>
+                ) : (
+                    <SchoolsChoice/>
+                )}
                 <DatesPicker/>
                 <LecturesByRooms/>
             </div>

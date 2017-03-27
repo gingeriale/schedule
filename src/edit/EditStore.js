@@ -2,8 +2,12 @@ import {observable, action} from 'mobx'
 
 import roomsDetails from 'edit-lib/roomsDetails'
 import Schools from 'schedule-app/schedule/Schools'
+import tabs from 'schedule-app/edit/Tabs'
 
 class EditStore {
+
+    @observable
+    tab = tabs.ROOM
 
     @observable
     room = roomsDetails.blue
@@ -22,6 +26,11 @@ class EditStore {
 
     @observable
     endToShow = ''
+
+    @action
+    changeTab(tab) {
+        this.tab = tabs[tab]
+    }
 
     @action
     changeRoomSelection(room) {

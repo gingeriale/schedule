@@ -3,6 +3,7 @@ import {observer} from 'inferno-mobx'
 
 import EditStore from 'schedule-app/edit/EditStore'
 import roomsDetails from 'edit-lib/roomsDetails'
+import tabs from 'schedule-app/edit/Tabs'
 
 @observer
 export default class Rooms extends Component {
@@ -23,6 +24,7 @@ export default class Rooms extends Component {
                         )
                     })}              
                 </select>
+                <span onClick={() => EditStore.changeTab(tabs.SCHOOL)}>К выбору школы</span>
             </div>
         )
     }
