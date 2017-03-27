@@ -18,13 +18,15 @@ export default class Schedule extends Component {
         return (
             <div>
                 <Header/>
+                <DatesPicker/>
                 {EditStore.tab === tabs.ROOM ? (
-                    <RoomsChoice/>
+                    <div>
+                        <RoomsChoice/>
+                        <LecturesByRooms/>
+                    </div>
                 ) : (
                     <SchoolsChoice/>
                 )}
-                <DatesPicker/>
-                <LecturesByRooms/>
             </div>
         )
     }
