@@ -1,11 +1,15 @@
 import {observable, action} from 'mobx'
 
 import roomsDetails from 'edit-lib/roomsDetails'
+import Schools from 'schedule-app/schedule/Schools'
 
 class EditStore {
 
     @observable
     room = roomsDetails.blue
+
+    @observable
+    school = Schools.INTERFACE
 
     @observable
     begin = ''
@@ -22,6 +26,11 @@ class EditStore {
     @action
     changeRoomSelection(room) {
         this.room = roomsDetails[room]
+    }
+
+    @action
+    changeSchoolSelection(school) {
+        this.school = Schools[school]
     }
 
     @action

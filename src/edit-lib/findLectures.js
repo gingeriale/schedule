@@ -9,8 +9,8 @@ const findLectures = (room, begin, end) => {
         Object.keys(lectures).forEach(lectureNumber => {
             const lecture = lectures[lectureNumber]
             if (lecture.room === room && filterByDates(begin, end, lecture.date)) {
-                foundLectures[Math.round(Math.random()*1000)] = {
-                    school: school,
+                foundLectures[lecture.theme] = {
+                    // school: school,
                     theme: lecture.theme,
                     date: lecture.dateView,
                     time: lecture.timeView
