@@ -9,6 +9,7 @@ import SchoolsChoice from 'schedule-app/edit/SchoolsChoice'
 import DatesPicker from 'schedule-app/edit/DatesPicker'
 import tabs from 'schedule-app/edit/Tabs'
 import LecturesByRooms from 'schedule-app/edit/LecturesByRooms'
+import LecturesBySchools from 'schedule-app/edit/LecturesBySchools'
 
 @observer
 export default class Schedule extends Component {
@@ -25,7 +26,10 @@ export default class Schedule extends Component {
                         <LecturesByRooms/>
                     </div>
                 ) : (
-                    <SchoolsChoice/>
+                    <div>
+                        <SchoolsChoice/>
+                        <LecturesBySchools/>
+                    </div>
                 )}
             </div>
         )
