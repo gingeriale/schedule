@@ -9,12 +9,19 @@ const findLecturesByRoom = (room, begin, end) => {
         Object.keys(lectures).forEach(lectureNumber => {
             const lecture = lectures[lectureNumber]
             if (lecture.room === room && filterByDates(begin, end, lecture.date)) {
-                foundLectures[lecture.theme] = {
-                    // school: school,
-                    theme: lecture.theme,
-                    date: lecture.dateView,
-                    time: lecture.timeView
+                if (foundLectures[lecture.theme] !== undefined) {
+                    const prevSchool = foundLectures[lecture.theme].school
+                    foundLectures[lecture.theme] = {
+                        school: `${prevSchool}, ${school}`
+                    }}
+                else {                
+                    foundLectures[lecture.theme] = {
+                        school: school
+                    }
                 }
+                foundLectures[lecture.theme].theme = lecture.theme
+                foundLectures[lecture.theme].theme = lecture.theme
+                foundLectures[lecture.theme].theme = lecture.theme                
             }
         })
     })
