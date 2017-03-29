@@ -20,8 +20,8 @@ const findLecturesByRoom = (room, begin, end) => {
                     }
                 }
                 foundLectures[lecture.theme].theme = lecture.theme
-                foundLectures[lecture.theme].theme = lecture.theme
-                foundLectures[lecture.theme].theme = lecture.theme                
+                foundLectures[lecture.theme].dateView = lecture.dateView
+                foundLectures[lecture.theme].timeView = lecture.timeView                
             }
         })
     })
