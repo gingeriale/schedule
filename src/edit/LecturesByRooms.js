@@ -28,6 +28,9 @@ export default class LecturesByRooms extends Component {
                                         </td>
                                     )
                                 })}
+                                <td>
+                                    <button>редактировать</button>
+                                </td>
                             </tr>
                         )
                     })}

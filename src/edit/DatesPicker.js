@@ -21,7 +21,9 @@ export default class DatesPicker extends Component {
                     value={EditStore.end}
                     onInput={event => EditStore.onEndChange(event.target.value)}
                 />
-                <div onClick={() => EditStore.showByBeginEnd()}>Показать</div>
+                <div>
+                    <button onClick={() => EditStore.showByBeginEnd()}>Показать</button>
+                </div>
             </div>
         )
     }

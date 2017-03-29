@@ -24,7 +24,7 @@ export default class SchoolsChoice extends Component {
                         )
                     })}
                 </select>
-                <span onClick={() => EditStore.changeTab(tabs.ROOM)}>К выбору аудитории</span>
+                <button onClick={() => EditStore.changeTab(tabs.ROOM)}>К выбору аудитории</button>
             </div>
         )
     }
