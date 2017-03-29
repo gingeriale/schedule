@@ -5,9 +5,6 @@ import schoolsDetails from 'edit-lib/schoolsDetails'
 
 class ScheduleStore {
 
-    @observable
-    content = observable.map(schoolsDetails)
-
     @observable 
     school = Schools.INTERFACE
 

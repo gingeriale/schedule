@@ -4,6 +4,7 @@ import {observer} from 'inferno-mobx'
 
 import ScheduleStore from 'schedule-app/schedule/ScheduleStore'
 import Schools from 'schedule-app/schedule/Schools'
+import schoolsDetails from 'edit-lib/SchoolsDetails'
 
 @observer
 export default class Table extends Component {
@@ -28,7 +29,7 @@ export default class Table extends Component {
     }
 
     renderContent(school) {
-        const content = ScheduleStore.content.get(school)
+        const content = schoolsDetails[school]
         return (
             <table>
                 {Object.keys(content).map(lecture => {
