@@ -5,6 +5,8 @@ import EditLibStore from 'edit-lib/EditLibStore'
 
 const findLecturesByRoom = (room, begin, end) => {
     const foundLectures = {}
+    //todo findAfterChanging
+    console.log('where is finding', EditLibStore.schoolsInfo)
     EditLibStore.schoolsInfo.keys().forEach(school => {
         const lectures = schoolsDetails[school]
         Object.keys(lectures).forEach(lectureNumber => {
