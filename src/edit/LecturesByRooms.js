@@ -42,6 +42,9 @@ export default class LecturesByRooms extends Component {
                                 <td>
                                     <button onClick={() => EditLibStore.setLectureOfRoomEdit(lecture)}>редактировать</button>
                                 </td>
+                                <td>
+                                    <button onClick={() => EditLibStore.setLectureOfRoomEdit(null)}>сохранить</button>
+                                </td>
                             </tr>
                         )
                     })}
