@@ -25,11 +25,9 @@ export default class LecturesByRooms extends Component {
                                 {Object.keys(lecture).map(lectureInfoItem => {
                                     return (
                                         <td>
-                                            {EditLibStore.lectureOfRoom && EditLibStore.lectureOfRoom.get('theme') === lecture.theme ? (
+                                            {EditLibStore.editingLectureOfRoom === lecture.theme ? (
                                                 <input
                                                     type="text"
-                                                    //todo change to schdetailsmap 
-                                                    // and to rewrite find lectures
                                                     value={EditLibStore.lectureOfRoom.get(lectureInfoItem)}
                                                     onInput={event => EditLibStore.editLectureOfRoom(lectureInfoItem, event.target.value)}
                                                 />

@@ -13,11 +13,15 @@ class EditLibStore {
     lectureOfRoom = null
 
     @observable
+    editingLectureOfRoom = null
+
+    @observable
     lectureOfSchool = null
 
     @action
     setLectureOfRoomEdit(lecture) {
         this.lectureOfRoom = observable.map(lecture)
+        this.editingLectureOfRoom = this.lectureOfRoom.get('theme')
     }
 
     @action
@@ -28,8 +32,8 @@ class EditLibStore {
 
     @action
     saveLectureOfRoom() {
-        const edited = this.schoolsInfo.get(this.lectureOfRoom.get('school'))
         this.lectureOfRoom = null
+        this.editingLectureOfRoom = null
     }
 
 }
