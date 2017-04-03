@@ -1,8 +1,8 @@
 import {observable, action} from 'mobx'
 
 import amountDetails from 'edit-lib/AmountDetails'
-import roomsDetails from 'edit-lib/RoomsDetails'
-import schoolsDetails from 'edit-lib/SchoolsDetails'
+import roomsDetails from 'edit-lib/roomsDetails'
+import schoolsDetails from 'edit-lib/schoolsDetails'
 
 class EditLibStore {
 
@@ -24,6 +24,12 @@ class EditLibStore {
     editLectureOfRoom(lectureInfoItem, value) {
         this.lectureOfRoom.set(lectureInfoItem, value)
         console.log(this.lectureOfRoom)
+    }
+
+    @action
+    saveLectureOfRoom() {
+        const edited = this.schoolsInfo.get(this.lectureOfRoom.get('school'))
+        this.lectureOfRoom = null
     }
 
 }

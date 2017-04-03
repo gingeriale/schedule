@@ -1,10 +1,11 @@
 import {compareAsc, parse} from 'date-fns'
 
 import schoolsDetails from 'edit-lib/schoolsDetails'
+import EditLibStore from 'edit-lib/EditLibStore'
 
 const findLecturesByRoom = (room, begin, end) => {
     const foundLectures = {}
-    Object.keys(schoolsDetails).forEach(school => {
+    EditLibStore.schoolsInfo.keys().forEach(school => {
         const lectures = schoolsDetails[school]
         Object.keys(lectures).forEach(lectureNumber => {
             const lecture = lectures[lectureNumber]
@@ -30,7 +31,7 @@ const findLecturesByRoom = (room, begin, end) => {
 
 const findLecturesBySchool = (school, begin, end) => {
     const foundLectures = {}
-    Object.keys(schoolsDetails[school]).forEach(lectureNumber => {
+    Object.keys(EditLibStore.schoolsInfo.get(school)).forEach(lectureNumber => {
         const lecture = schoolsDetails[school][lectureNumber]
         if (filterByDates(begin, end, lecture.date)) {
             foundLectures[lecture.theme] = {
