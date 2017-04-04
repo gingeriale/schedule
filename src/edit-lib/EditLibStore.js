@@ -35,11 +35,8 @@ class EditLibStore {
         const editedLecture = Object.keys(editedSchool).find(lecture => {
             return editedSchool[lecture].theme === this.editingLectureOfRoom
         })
-        console.log(editedLecture)
         editedSchool[editedLecture].theme = this.lectureOfRoom.get('theme')
-        console.log(editedSchool)
         this.schoolsInfo.set(this.lectureOfRoom.get('school'), editedSchool)
-        console.log('edited', this.schoolsInfo)
         this.lectureOfRoom = null
         this.editingLectureOfRoom = null
     }

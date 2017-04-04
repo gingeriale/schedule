@@ -5,10 +5,8 @@ import EditLibStore from 'edit-lib/EditLibStore'
 
 const findLecturesByRoom = (room, begin, end) => {
     const foundLectures = {}
-    //todo findAfterChanging
-    console.log('where is finding', EditLibStore.schoolsInfo)
     EditLibStore.schoolsInfo.keys().forEach(school => {
-        const lectures = schoolsDetails[school]
+        const lectures = EditLibStore.schoolsInfo.get(school)
         Object.keys(lectures).forEach(lectureNumber => {
             const lecture = lectures[lectureNumber]
             if (lecture.room === room && filterByDates(begin, end, lecture.date)) {
@@ -34,7 +32,7 @@ const findLecturesByRoom = (room, begin, end) => {
 const findLecturesBySchool = (school, begin, end) => {
     const foundLectures = {}
     Object.keys(EditLibStore.schoolsInfo.get(school)).forEach(lectureNumber => {
-        const lecture = schoolsDetails[school][lectureNumber]
+        const lecture = EditLibStore.schoolsInfo.get(school)[lectureNumber]
         if (filterByDates(begin, end, lecture.date)) {
             foundLectures[lecture.theme] = {
                 room: lecture.room,

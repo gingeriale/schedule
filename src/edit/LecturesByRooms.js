@@ -10,7 +10,6 @@ export default class LecturesByRooms extends Component {
 
     render () {
         const foundLectures = findLecturesByRoom(EditStore.room.name, EditStore.beginToShow, EditStore.endToShow)
-        console.log('view', foundLectures)
         return (
             <div>
                 <div>
