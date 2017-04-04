@@ -3,6 +3,7 @@ import {observer} from 'inferno-mobx'
 
 import EditStore from 'schedule-app/edit/EditStore'
 import {findLecturesBySchool} from 'edit-lib/findLectures'
+import EditLibStore from 'edit-lib/EditLibStore'
 
 @observer
 export default class LecturesBySchools extends Component {
@@ -24,10 +25,24 @@ export default class LecturesBySchools extends Component {
                                 {Object.keys(lecture).map(lectureInfoItem => {
                                     return (
                                         <td>
-                                            {lecture[lectureInfoItem]}
+                                            {EditLibStore.editingLectureOfSchool === lecture.theme ? (
+                                                <input
+                                                    type="text"
+                                                    value={EditLibStore.lectureOfSchool.get(lectureInfoItem)}
+                                                    onInput={event => EditLibStore.editLectureOfSchool(lectureInfoItem, event.target.value)}
+                                                />
+                                            ) : (
+                                                lecture[lectureInfoItem]
+                                            )}
                                         </td>
                                     )
                                 })}
+                                <td>
+                                    <button onClick={() => EditLibStore.setLectureOfSchoolEdit(lecture)}>редактировать</button>
+                                </td>
+                                <td>
+                                    <button onClick={() => EditLibStore.saveLectureOfSchool()}>сохранить</button>
+                                </td>
                             </tr>
                         )
                     })}

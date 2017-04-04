@@ -3,6 +3,7 @@ import {observable, action} from 'mobx'
 import amountDetails from 'edit-lib/AmountDetails'
 import roomsDetails from 'edit-lib/roomsDetails'
 import schoolsDetails from 'edit-lib/schoolsDetails'
+import EditStore from 'schedule-app/edit/EditStore'
 
 class EditLibStore {
 
@@ -17,6 +18,9 @@ class EditLibStore {
 
     @observable
     lectureOfSchool = null
+
+    @observable
+    editingLectureOfSchool = null
 
     @action
     setLectureOfRoomEdit(lecture) {
@@ -39,6 +43,29 @@ class EditLibStore {
         this.schoolsInfo.set(this.lectureOfRoom.get('school'), editedSchool)
         this.lectureOfRoom = null
         this.editingLectureOfRoom = null
+    }
+
+    @action
+    setLectureOfSchoolEdit(lecture) {
+        this.lectureOfSchool = observable.map(lecture)
+        this.editingLectureOfSchool = this.lectureOfSchool.get('theme')
+    }
+
+    @action
+    editLectureOfSchool(lectureInfoItem, value) {
+        this.lectureOfSchool.set(lectureInfoItem, value)
+    }
+
+    @action
+    saveLectureOfSchool() {
+        const editedSchool = this.schoolsInfo.get(EditStore.school)
+        const editedLecture = Object.keys(editedSchool).find(lecture => {
+            return editedSchool[lecture].theme === this.editingLectureOfSchool
+        })
+        editedSchool[editedLecture].theme = this.lectureOfSchool.get('theme')
+        this.schoolsInfo.set(EditStore.school, editedSchool)
+        this.lectureOfSchool = null
+        this.editingLectureOfSchool = null
     }
 
 }
