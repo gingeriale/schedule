@@ -37,8 +37,8 @@ const findLecturesBySchool = (school, begin, end) => {
             foundLectures[lecture.theme] = {
                 room: lecture.room,
                 theme: lecture.theme,
-                date: lecture.dateView,
-                time: lecture.timeView
+                dateView: lecture.dateView,
+                timeView: lecture.timeView
             }
         }
     })

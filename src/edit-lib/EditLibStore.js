@@ -1,4 +1,5 @@
 import {observable, action} from 'mobx'
+import {parse} from 'date-fns'
 
 import amountDetails from 'edit-lib/AmountDetails'
 import roomsDetails from 'edit-lib/roomsDetails'
@@ -40,7 +41,9 @@ class EditLibStore {
             return editedSchool[lecture].theme === this.editingLectureOfRoom
         })
         editedSchool[editedLecture].theme = this.lectureOfRoom.get('theme')
-        this.schoolsInfo.set(this.lectureOfRoom.get('school'), editedSchool)
+        editedSchool[editedLecture].dateView = this.lectureOfRoom.get('dateView')
+        editedSchool[editedLecture].timeView = this.lectureOfRoom.get('timeView')
+        editedSchool[editedLecture].date = parse(`${this.lectureOfRoom.get('dateView')}T${this.lectureOfRoom.get('timeView')}`)
         this.lectureOfRoom = null
         this.editingLectureOfRoom = null
     }
@@ -63,7 +66,9 @@ class EditLibStore {
             return editedSchool[lecture].theme === this.editingLectureOfSchool
         })
         editedSchool[editedLecture].theme = this.lectureOfSchool.get('theme')
-        this.schoolsInfo.set(EditStore.school, editedSchool)
+        editedSchool[editedLecture].dateView = this.lectureOfSchool.get('dateView')
+        editedSchool[editedLecture].timeView = this.lectureOfSchool.get('timeView')
+        editedSchool[editedLecture].date = parse(`${this.lectureOfSchool.get('dateView')}T${this.lectureOfSchool.get('timeView')}`)
         this.lectureOfSchool = null
         this.editingLectureOfSchool = null
     }
