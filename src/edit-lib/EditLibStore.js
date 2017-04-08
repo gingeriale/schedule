@@ -23,6 +23,12 @@ class EditLibStore {
     @observable
     editingLectureOfSchool = null
 
+    @observable
+    addingLectureState = false
+
+    @observable
+    addingLectureItem = {}
+
     @action
     setLectureOfRoomEdit(lecture) {
         this.lectureOfRoom = observable.map(lecture)
@@ -71,6 +77,39 @@ class EditLibStore {
         editedSchool[editedLecture].date = parse(`${this.lectureOfSchool.get('dateView')}T${this.lectureOfSchool.get('timeView')}`)
         this.lectureOfSchool = null
         this.editingLectureOfSchool = null
+    }
+
+    @action
+    changeAddingLectureState() {
+        if (this.addingLectureState) {
+            this.addLecture()
+            this.addingLectureItem = {}
+        }
+        this.addingLectureState = !this.addingLectureState
+    }
+
+    @action
+    cancelAddingLecture() {
+        this.addingLectureItem = {}
+        this.addingLectureState = false
+    }
+
+    @action
+    addLectureInfo(info, value) {
+        this.addingLectureItem[info] = value
+    }
+
+    @action
+    addLecture() {
+        if (Object.keys(this.addingLectureItem).length !== 4) {
+            return
+        }
+        const editedSchool = this.schoolsInfo.get(EditStore.school)
+        const lectureId = Object.keys(editedSchool).length + 1
+        
+        editedSchool[lectureId] = this.addingLectureItem
+        editedSchool[lectureId].date = parse(`${this.addingLectureItem.dateView}T${this.addingLectureItem.timeView}`)
+        console.log(this.schoolsInfo)
     }
 
 }

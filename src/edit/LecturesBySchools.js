@@ -47,6 +47,47 @@ export default class LecturesBySchools extends Component {
                         )
                     })}
                 </table>
+                {!EditLibStore.addingLectureState ? (
+                    <button onClick={() => EditLibStore.changeAddingLectureState()}>добавить</button>
+                ) : (
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <input
+                                        type="text"
+                                        placeholder="аудитория"
+                                        onChange={event => EditLibStore.addLectureInfo('room', event.target.value)}
+                                    />
+                                </td>
+                                <td>
+                                    <input
+                                        type="text"
+                                        placeholder="тема лекции"
+                                        onChange={event => EditLibStore.addLectureInfo('theme', event.target.value)}
+                                    />
+                                </td>
+                                <td>
+                                    <input
+                                        type="text"
+                                        placeholder="дата в формате ГГГГ-ММ-ДД"
+                                        onChange={event => EditLibStore.addLectureInfo('dateView', event.target.value)}
+                                    />
+                                </td>
+                                <td>
+                                    <input
+                                        type="text"
+                                        placeholder="время в формате ЧЧ:ММ"
+                                        onChange={event => EditLibStore.addLectureInfo('timeView', event.target.value)}
+                                    />
+                                </td>
+                            </tr>
+                        </table>
+                        <button onClick={() => EditLibStore.changeAddingLectureState()}>сохранить</button>
+                        <button onClick={() => EditLibStore.cancelAddingLecture()} >отмена</button>
+                        <div>необходимо заполнить все поля для добавления лекции</div>
+                    </div>
+                )}
             </div>
         )
     }

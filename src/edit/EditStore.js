@@ -7,7 +7,7 @@ import tabs from 'schedule-app/edit/Tabs'
 class EditStore {
 
     @observable
-    tab = tabs.ROOM
+    tab = tabs.SCHOOL
 
     @observable
     room = roomsDetails.blue
