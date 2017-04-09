@@ -42,13 +42,13 @@ const styles = {
     headerItem: {
         display: 'inline-block',
         width: '150px',
-        color: '#708090',
+        color: '#2f2f2f',
         'text-align': 'center',
         'font-size': '20px'
     },
     active: {
-        color: '#000',
-        'background-color': 'C0C0C0',
+        color: '#060606',
+        'background-color': '#c7c7c7',
         'border-radius': '5px'
     }
 }

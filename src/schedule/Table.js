@@ -2,6 +2,7 @@ import Component from 'inferno-component'
 import jss from 'jss'
 import {observer} from 'inferno-mobx'
 import cn from 'classnames'
+import nested from 'jss-nested'
 
 import ScheduleStore from 'schedule-app/schedule/ScheduleStore'
 import Schools from 'schedule-app/schedule/Schools'
@@ -89,9 +90,21 @@ export default class Table extends Component {
 const styles = {
     schoolName: {
         display: 'inline-block',
-        width: '100px'
+        width: '100px',
+        color: '#060606',
+        'text-align': 'center',
+        'border-radius': '5px',
+        '&:hover': {
+            color: '#6d4546',
+            cursor: 'pointer'
+        }
     },
     activeSchoolName: {
-        
+        background: '#d7c6be',
+        '&:hover': {
+            color: '#060606'
+        }
     }
 }
+
+jss.use(nested())

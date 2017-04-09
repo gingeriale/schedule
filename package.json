@@ -42,6 +42,7 @@
     "inferno-create-element": "^1",
     "inferno-mobx": "^1.4.0",
     "inferno-router": "^1",
+    "jss-nested": "^3.0.1",
     "mobx": "^3.1.7"
   }
 }
