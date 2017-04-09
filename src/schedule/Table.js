@@ -47,14 +47,14 @@ export default class Table extends Component {
                             <td>{content[lecture].room}</td>
                             <td>
                                 {isLecturePast(content[lecture].date) ? (
-                                    content[lecture].materials
+                                    <a target="_blank" href={content[lecture].materials}>материалы</a>
                                 ) : (
                                     content[lecture].dateView
                                 )}
                             </td>
                             <td>
                                 {isLecturePast(content[lecture].date) ? (
-                                    content[lecture].video
+                                    <a target="_blank" href={content[lecture].video}>видео</a>
                                 ) : (
                                     content[lecture].timeView
                                 )}

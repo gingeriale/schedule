@@ -14,8 +14,8 @@ const schoolsDetails = {
             date: new Date(2017, 3, 3, 18, 0),
             dateView: formatDate(new Date(2017, 3, 3, 18, 0)),
             timeView: formatTime(new Date(2017, 3, 3, 18, 0)),
-            materials: 'materials1',
-            video: 'video1'
+            materials: 'https://ya.ru',
+            video: 'https://ya.ru'
         },
         2: {
             common: false,
@@ -25,8 +25,8 @@ const schoolsDetails = {
             date: new Date(2017, 3, 7, 18, 0),
             dateView: formatDate(new Date(2017, 3, 7, 18, 0)),
             timeView: formatTime(new Date(2017, 3, 7, 18, 0)),
-            materials: 'materials2',
-            video: 'video2'
+            materials: 'https://ya.ru',
+            video: 'https://ya.ru'
         },
         3: {
             common: true,
@@ -36,8 +36,8 @@ const schoolsDetails = {
             date: new Date(2017, 3, 10, 18, 0),
             dateView: formatDate(new Date(2017, 3, 10, 18, 0)),
             timeView: formatTime(new Date(2017, 3, 10, 18, 0)),
-            materials: 'materials2',
-            video: 'video2'
+            materials: 'https://ya.ru',
+            video: 'https://ya.ru'
         },
         4: {
             common: false,
@@ -47,8 +47,8 @@ const schoolsDetails = {
             date: new Date(2017, 4, 15, 18, 0),
             dateView: formatDate(new Date(2017, 4, 15, 18, 0)),
             timeView: formatTime(new Date(2017, 4, 15, 18, 0)),
-            materials: 'materials2',
-            video: 'video2'
+            materials: 'https://ya.ru',
+            video: 'https://ya.ru'
         },
         5: {
             common: true,
@@ -58,8 +58,8 @@ const schoolsDetails = {
             date: new Date(2017, 4, 19, 18, 0),
             dateView: formatDate(new Date(2017, 4, 19, 18, 0)),
             timeView: formatTime(new Date(2017, 4, 19, 18, 0)),
-            materials: 'materials2',
-            video: 'video2'
+            materials: 'https://ya.ru',
+            video: 'https://ya.ru'
         },
         6: {
             common: false,
@@ -69,8 +69,8 @@ const schoolsDetails = {
             date: new Date(2017, 4, 22, 18, 0),
             dateView: formatDate(new Date(2017, 4, 22, 18, 0)),
             timeView: formatTime(new Date(2017, 4, 22, 18, 0)),
-            materials: 'materials2',
-            video: 'video2'
+            materials: 'https://ya.ru',
+            video: 'https://ya.ru'
         }
     },
     MOBILE: {
@@ -82,8 +82,8 @@ const schoolsDetails = {
             date: new Date(2017, 3, 3, 18, 0),
             dateView: formatDate(new Date(2017, 3, 3, 18, 0)),
             timeView: formatTime(new Date(2017, 3, 3, 18, 0)),
-            materials: 'materials',
-            video: 'video'
+            materials: 'https://ya.ru',
+            video: 'https://ya.ru'
         },
         2: {
             common: false,
@@ -93,8 +93,8 @@ const schoolsDetails = {
             date: new Date(2017, 3, 7, 18, 0),
             dateView: formatDate(new Date(2017, 3, 7, 18, 0)),
             timeView: formatTime(new Date(2017, 3, 7, 18, 0)),
-            materials: 'materials',
-            video: 'video'
+            materials: 'https://ya.ru',
+            video: 'https://ya.ru'
         },
         3: {
             common: true,
@@ -104,8 +104,8 @@ const schoolsDetails = {
             date: new Date(2017, 3, 10, 18, 0),
             dateView: formatDate(new Date(2017, 3, 10, 18, 0)),
             timeView: formatTime(new Date(2017, 3, 10, 18, 0)),
-            materials: 'materials',
-            video: 'video'
+            materials: 'https://ya.ru',
+            video: 'https://ya.ru'
         },
         4: {
             common: false,
@@ -115,8 +115,8 @@ const schoolsDetails = {
             date: new Date(2017, 4, 15, 18, 0),
             dateView: formatDate(new Date(2017, 4, 15, 18, 0)),
             timeView: formatTime(new Date(2017, 4, 15, 18, 0)),
-            materials: 'materials',
-            video: 'video'
+            materials: 'https://ya.ru',
+            video: 'https://ya.ru'
         },
         5: {
             common: true,
@@ -126,8 +126,8 @@ const schoolsDetails = {
             date: new Date(2017, 4, 19, 18, 0),
             dateView: formatDate(new Date(2017, 4, 19, 18, 0)),
             timeView: formatTime(new Date(2017, 4, 19, 18, 0)),
-            materials: 'materials',
-            video: 'video'
+            materials: 'https://ya.ru',
+            video: 'https://ya.ru'
         },
         6: {
             common: false,
@@ -137,8 +137,8 @@ const schoolsDetails = {
             date: new Date(2017, 4, 22, 18, 0),
             dateView: formatDate(new Date(2017, 4, 22, 18, 0)),
             timeView: formatTime(new Date(2017, 4, 22, 18, 0)),
-            materials: 'materials',
-            video: 'video'
+            materials: 'https://ya.ru',
+            video: 'https://ya.ru'
         }
     },
     DESIGN: {
@@ -150,8 +150,8 @@ const schoolsDetails = {
             date: new Date(2017, 3, 3, 18, 0),
             dateView: formatDate(new Date(2017, 3, 3, 18, 0)),
             timeView: formatTime(new Date(2017, 3, 3, 18, 0)),
-            materials: 'materials',
-            video: 'video'
+            materials: 'https://ya.ru',
+            video: 'https://ya.ru'
         },
         2: {
             common: false,
@@ -161,8 +161,8 @@ const schoolsDetails = {
             date: new Date(2017, 3, 7, 18, 0),
             dateView: formatDate(new Date(2017, 3, 7, 18, 0)),
             timeView: formatTime(new Date(2017, 3, 7, 18, 0)),
-            materials: 'materials',
-            video: 'video'
+            materials: 'https://ya.ru',
+            video: 'https://ya.ru'
         },
         3: {
             common: true,
@@ -172,8 +172,8 @@ const schoolsDetails = {
             date: new Date(2017, 3, 10, 18, 0),
             dateView: formatDate(new Date(2017, 3, 10, 18, 0)),
             timeView: formatTime(new Date(2017, 3, 10, 18, 0)),
-            materials: 'materials',
-            video: 'video'
+            materials: 'https://ya.ru',
+            video: 'https://ya.ru'
         },
         4: {
             common: false,
@@ -183,8 +183,8 @@ const schoolsDetails = {
             date: new Date(2017, 4, 15, 18, 0),
             dateView: formatDate(new Date(2017, 4, 15, 18, 0)),
             timeView: formatTime(new Date(2017, 4, 15, 18, 0)),
-            materials: 'materials',
-            video: 'video'
+            materials: 'https://ya.ru',
+            video: 'https://ya.ru'
         },
         5: {
             common: true,
@@ -194,8 +194,8 @@ const schoolsDetails = {
             date: new Date(2017, 4, 19, 18, 0),
             dateView: formatDate(new Date(2017, 4, 19, 18, 0)),
             timeView: formatTime(new Date(2017, 4, 19, 18, 0)),
-            materials: 'materials',
-            video: 'video'
+            materials: 'https://ya.ru',
+            video: 'https://ya.ru'
         },
         6: {
             common: false,
@@ -205,8 +205,8 @@ const schoolsDetails = {
             date: new Date(2017, 4, 22, 18, 0),
             dateView: formatDate(new Date(2017, 4, 22, 18, 0)),
             timeView: formatTime(new Date(2017, 4, 22, 18, 0)),
-            materials: 'materials',
-            video: 'video'
+            materials: 'https://ya.ru',
+            video: 'https://ya.ru'
         }
     }
 }
