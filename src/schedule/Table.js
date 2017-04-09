@@ -1,6 +1,7 @@
 import Component from 'inferno-component'
 import jss from 'jss'
 import {observer} from 'inferno-mobx'
+import cn from 'classnames'
 
 import ScheduleStore from 'schedule-app/schedule/ScheduleStore'
 import Schools from 'schedule-app/schedule/Schools'
@@ -11,11 +12,27 @@ import isLecturePast from 'schedule-app/schedule/isLecturePast'
 export default class Table extends Component {
 
     render() {
+        const {classes} = jss.createStyleSheet(styles).attach()
         return (
             <div>
-                <span onClick={() => ScheduleStore.showSchool(Schools.INTERFACE)}>Interface</span>
-                <span onClick={() => ScheduleStore.showSchool(Schools.MOBILE)}>Mobile</span>
-                <span onClick={() => ScheduleStore.showSchool(Schools.DESIGN)}>Design</span>
+                <div 
+                    onClick={() => ScheduleStore.showSchool(Schools.INTERFACE)}
+                    className={cn(`${classes.schoolName}`, {[classes.activeSchoolName]: ScheduleStore.school === Schools.INTERFACE})}
+                >
+                    {Schools.INTERFACE}
+                </div>
+                <div 
+                    onClick={() => ScheduleStore.showSchool(Schools.MOBILE)}
+                    className={cn(`${classes.schoolName}`, {[classes.activeSchoolName]: ScheduleStore.school === Schools.MOBILE})}
+                >
+                    {Schools.MOBILE}
+                </div>
+                <div 
+                    onClick={() => ScheduleStore.showSchool(Schools.DESIGN)}
+                    className={cn(`${classes.schoolName}`, {[classes.activeSchoolName]: ScheduleStore.school === Schools.DESIGN})}
+                >
+                    {Schools.DESIGN}
+                </div>
                 <div>
                     {ScheduleStore.school === Schools.INTERFACE ? (
                         this.renderContent(Schools.INTERFACE)
@@ -30,6 +47,7 @@ export default class Table extends Component {
     }
 
     renderContent(school) {
+        const {classes} = jss.createStyleSheet(styles).attach()
         const content = EditLibStore.schoolsInfo.get(school)
         return (
             <table>
@@ -66,4 +84,14 @@ export default class Table extends Component {
         )
     }
 
+}
+
+const styles = {
+    schoolName: {
+        display: 'inline-block',
+        width: '100px'
+    },
+    activeSchoolName: {
+        
+    }
 }
