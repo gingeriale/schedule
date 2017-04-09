@@ -5,6 +5,7 @@ import {observer} from 'inferno-mobx'
 import ScheduleStore from 'schedule-app/schedule/ScheduleStore'
 import Schools from 'schedule-app/schedule/Schools'
 import EditLibStore from 'edit-lib/EditLibStore'
+import isLecturePast from 'schedule-app/schedule/isLecturePast'
 
 @observer
 export default class Table extends Component {
@@ -35,11 +36,29 @@ export default class Table extends Component {
                 {Object.keys(content).map(lecture => {
                     return (
                         <tr>
-                            {Object.keys(content[lecture]).map(info => {
-                                return (
-                                    <td>{content[lecture][info]}</td>
-                                )
-                            })}
+                            <td>{content[lecture].common ? (
+                                    'общая лекция'
+                                ) : (
+                                    null
+                                )}
+                            </td>
+                            <td>{content[lecture].theme}</td>
+                            <td>{content[lecture].speaker}</td>
+                            <td>{content[lecture].room}</td>
+                            <td>
+                                {isLecturePast(content[lecture].date) ? (
+                                    content[lecture].materials
+                                ) : (
+                                    content[lecture].dateView
+                                )}
+                            </td>
+                            <td>
+                                {isLecturePast(content[lecture].date) ? (
+                                    content[lecture].video
+                                ) : (
+                                    content[lecture].timeView
+                                )}
+                            </td>
                         </tr>
                     )
                 })}
