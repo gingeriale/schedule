@@ -51,27 +51,27 @@ export default class Table extends Component {
         const {classes} = jss.createStyleSheet(styles).attach()
         const content = EditLibStore.schoolsInfo.get(school)
         return (
-            <table>
+            <table className={classes.schoolTable}>
                 {Object.keys(content).map(lecture => {
                     return (
                         <tr>
-                            <td>{content[lecture].common ? (
-                                    'общая лекция'
+                            <td className={classes.schoolTableCommonCell}>{content[lecture].common ? (
+                                    <div className={classes.schoolTableCommon}>общая</div>
                                 ) : (
                                     null
                                 )}
                             </td>
-                            <td>{content[lecture].theme}</td>
-                            <td>{content[lecture].speaker}</td>
-                            <td>{content[lecture].room}</td>
-                            <td>
+                            <td className={classes.schoolTableTheme}>{content[lecture].theme}</td>
+                            <td className={classes.schoolTableSpeaker}>{content[lecture].speaker}</td>
+                            <td className={classes.schoolTableRoom}>{content[lecture].room}</td>
+                            <td className={classes.schoolTableDateTime}>
                                 {isLecturePast(content[lecture].date) ? (
                                     <a target="_blank" href={content[lecture].materials}>материалы</a>
                                 ) : (
                                     content[lecture].dateView
                                 )}
                             </td>
-                            <td>
+                            <td className={classes.schoolTableDateTime}>
                                 {isLecturePast(content[lecture].date) ? (
                                     <a target="_blank" href={content[lecture].video}>видео</a>
                                 ) : (
@@ -91,19 +91,64 @@ const styles = {
     schoolName: {
         display: 'inline-block',
         width: '100px',
+        'margin-bottom': '15px',
         color: '#060606',
         'text-align': 'center',
         'border-radius': '5px',
         '&:hover': {
             color: '#6d4546',
             cursor: 'pointer'
-        }
+        },
+        'font-family': "Menlo, Monaco, monospace"
     },
     activeSchoolName: {
         background: '#d7c6be',
         '&:hover': {
             color: '#060606'
         }
+    },
+    schoolTable: {
+        width: '100%',
+        color: '#060606',
+        'border-collapse': 'collapse',
+        'font-family': "Menlo, Monaco, monospace"
+    },
+    schoolTableCommonCell: {
+        width: '50px'
+    },
+    schoolTableCommon: {
+        width: '100%',
+        background: '#2f2f2f',
+        color: '#d7c6be',
+        'text-align': 'center',
+        'border-radius': '5px'
+    },
+    schoolTableSpeaker: {
+        width: '15%',
+        'padding-bottom': '2px',
+        color: '#6d4546',
+        'border-bottom': '1px solid #c7c7c7',
+        'border-top': '1px solid #c7c7c7'
+    },
+    schoolTableRoom: {
+        width: '11%',
+        'text-transform': 'uppercase',
+        'padding-bottom': '2px',
+        'border-bottom': '1px solid #c7c7c7',
+        'border-top': '1px solid #c7c7c7'
+    },
+    schoolTableTheme: {
+        width: '50%',
+        'padding-bottom': '2px',
+        'border-bottom': '1px solid #c7c7c7',
+        'border-top': '1px solid #c7c7c7'
+    },
+    schoolTableDateTime: {
+        'padding-bottom': '2px',
+        background: '#eef0ef',
+        'border-bottom': '1px solid #c7c7c7',
+        'border-top': '1px solid #c7c7c7',
+        'text-align': 'center'
     }
 }
 

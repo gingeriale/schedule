@@ -37,11 +37,12 @@ export default class Header extends Component {
 
 const styles = {
     header: {
-        'margin-bottom': '20px'
+        'margin-bottom': '35px',
+        'font-family': "Menlo, Monaco, monospace"
     },
     headerItem: {
         display: 'inline-block',
-        width: '150px',
+        width: '185px',
         color: '#2f2f2f',
         'text-align': 'center',
         'font-size': '20px'
