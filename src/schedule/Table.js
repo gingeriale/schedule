@@ -8,6 +8,7 @@ import ScheduleStore from 'schedule-app/schedule/ScheduleStore'
 import Schools from 'schedule-app/schedule/Schools'
 import EditLibStore from 'edit-lib/EditLibStore'
 import isLecturePast from 'schedule-app/schedule/isLecturePast'
+import SpeakerInfo from 'schedule-app/schedule/SpeakerInfo'
 
 @observer
 export default class Table extends Component {
@@ -43,6 +44,11 @@ export default class Table extends Component {
                         this.renderContent(Schools.DESIGN)
                     )}
                 </div>
+                {ScheduleStore.speakerInfoVisible ? (
+                    <SpeakerInfo/>      
+                ) : (
+                    null
+                )}
             </div>
         )
     }
@@ -62,7 +68,12 @@ export default class Table extends Component {
                                 )}
                             </td>
                             <td className={classes.schoolTableTheme}>{content[lecture].theme}</td>
-                            <td className={classes.schoolTableSpeaker}>{content[lecture].speaker}</td>
+                            <td 
+                                className={classes.schoolTableSpeaker}
+                                onClick={event => ScheduleStore.changeSpeakerInfoVisible(event)}
+                            >
+                                {content[lecture].speaker}
+                            </td>
                             <td className={classes.schoolTableRoom}>{content[lecture].room}</td>
                             <td className={classes.schoolTableDateTime}>
                                 {isLecturePast(content[lecture].date) ? (
@@ -128,7 +139,8 @@ const styles = {
         'padding-bottom': '2px',
         color: '#6d4546',
         'border-bottom': '1px solid #c7c7c7',
-        'border-top': '1px solid #c7c7c7'
+        'border-top': '1px solid #c7c7c7',
+        cursor: 'pointer'
     },
     schoolTableRoom: {
         width: '11%',
