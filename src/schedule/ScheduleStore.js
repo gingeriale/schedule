@@ -14,7 +14,8 @@ class ScheduleStore {
     @observable
     speakerInfoCoord = observable.map({
         pageX: 0,
-        pageY: 0
+        pageY: 0,
+        target: null
     })
 
     @action
@@ -27,8 +28,14 @@ class ScheduleStore {
         if (!this.speakerInfoVisible) {
             this.speakerInfoCoord.set('pageX', event.pageX)
             this.speakerInfoCoord.set('pageY', event.pageY)
+            this.speakerInfoCoord.set('target', event.target)
+            this.speakerInfoVisible = true
         }
-        this.speakerInfoVisible = !this.speakerInfoVisible
+        else {
+            if (event.target === this.speakerInfoCoord.get('target')) {
+                this.speakerInfoVisible = false
+            }
+        }
     }
 
 }
