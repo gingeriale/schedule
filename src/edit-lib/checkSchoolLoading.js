@@ -1,4 +1,4 @@
-import {compareAsc, differenceInHours} from 'date-fns'
+import {differenceInHours} from 'date-fns'
 
 import schoolsDetails from 'edit-lib/schoolsDetails'
 
@@ -8,7 +8,7 @@ const checkSchoolLoading = (school, date, editedLecture = null) => {
             return true
         }
         const lectureInstance = schoolsDetails[school][lecture]
-        return Math.abs(differenceInHours(date, lectureInstance.date)) > 2
+        return Math.abs(differenceInHours(date, lectureInstance.date)) >= 2
     })
 }
 

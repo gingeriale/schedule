@@ -7,6 +7,7 @@ import schoolsDetails from 'edit-lib/schoolsDetails'
 import EditStore from 'schedule-app/edit/EditStore'
 import checkRoomCapacity from 'edit-lib/checkRoomCapacity'
 import checkSchoolLoading from 'edit-lib/checkSchoolLoading'
+import checkRoomLoading from 'edit-lib/checkRoomLoading'
 
 class EditLibStore {
 
@@ -75,6 +76,7 @@ class EditLibStore {
         })
         console.log('roomCapacity', checkRoomCapacity(EditStore.school, this.lectureOfSchool.get('room')))
         console.log('schoolLoading', checkSchoolLoading(EditStore.school, parse(`${this.lectureOfSchool.get('dateView')}T${this.lectureOfSchool.get('timeView')}`), editedLecture))
+        console.log('roomLoading', checkRoomLoading(EditStore.school, this.lectureOfSchool.get('room'), parse(`${this.lectureOfSchool.get('dateView')}T${this.lectureOfSchool.get('timeView')}`), editedLecture))
         editedSchool[editedLecture].room = this.lectureOfSchool.get('room')
         editedSchool[editedLecture].theme = this.lectureOfSchool.get('theme')
         editedSchool[editedLecture].dateView = this.lectureOfSchool.get('dateView')
