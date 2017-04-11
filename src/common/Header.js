@@ -10,14 +10,14 @@ export default class Header extends Component {
 
     render() {
         const {classes} = jss.createStyleSheet(styles).attach()
-
+        const routePart = window.location.href.slice(-4)
         return (
             <div className={classes.header}>
                 <Link 
                     to="/schedule"
                     onClick={() => AppStore.setHeader(HeaderItems.SCHEDULE)}
                 >
-                    <div className={cn(`${classes.headerItem}`, {[classes.active]: AppStore.header === HeaderItems.SCHEDULE})}>
+                    <div className={cn(`${classes.headerItem}`, {[classes.active]: routePart === 'dule'})}>
                         Расписание
                     </div>
                 </Link>
@@ -25,7 +25,7 @@ export default class Header extends Component {
                     to="/edit"
                     onClick={() => AppStore.setHeader(HeaderItems.EDIT)}
                 >
-                    <div className={cn(`${classes.headerItem}`, {[classes.active]: AppStore.header === HeaderItems.EDIT})}>
+                    <div className={cn(`${classes.headerItem}`, {[classes.active]: routePart === 'edit'})}>
                         Редактирование
                     </div>
                 </Link>
