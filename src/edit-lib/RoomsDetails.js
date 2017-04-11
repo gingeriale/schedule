@@ -4,15 +4,15 @@ const roomsDetails = {
         capacity: 50,
         location: '2 этаж'
     },
-    red: {
-        name: 'Красная',
-        capacity: 60,
-        location: '3 этаж'
-    },
     yellow: {
         name: 'Желтая',
         capacity: 40,
         location: '5 этаж'
+    },
+    red: {
+        name: 'Красная',
+        capacity: 60,
+        location: '3 этаж'
     },
     large: {
         name: 'Просторная',

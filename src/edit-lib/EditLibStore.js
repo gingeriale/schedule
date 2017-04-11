@@ -1,10 +1,12 @@
 import {observable, action} from 'mobx'
 import {parse} from 'date-fns'
 
-import amountDetails from 'edit-lib/AmountDetails'
+import amountDetails from 'edit-lib/amountDetails'
 import roomsDetails from 'edit-lib/roomsDetails'
 import schoolsDetails from 'edit-lib/schoolsDetails'
 import EditStore from 'schedule-app/edit/EditStore'
+import checkRoomCapacity from 'edit-lib/checkRoomCapacity'
+// import checkSchoolLoading from 'edit-lib/checkSchoolLoading'
 
 class EditLibStore {
 
@@ -71,6 +73,8 @@ class EditLibStore {
         const editedLecture = Object.keys(editedSchool).find(lecture => {
             return editedSchool[lecture].theme === this.editingLectureOfSchool
         })
+        console.log('roomCapacity', checkRoomCapacity(EditStore.school, this.lectureOfSchool.get('room')))
+        editedSchool[editedLecture].room = this.lectureOfSchool.get('room')
         editedSchool[editedLecture].theme = this.lectureOfSchool.get('theme')
         editedSchool[editedLecture].dateView = this.lectureOfSchool.get('dateView')
         editedSchool[editedLecture].timeView = this.lectureOfSchool.get('timeView')
