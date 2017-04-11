@@ -113,10 +113,8 @@ class EditLibStore {
         }
         const editedSchool = this.schoolsInfo.get(EditStore.school)
         const lectureId = Object.keys(editedSchool).length + 1
-        
         editedSchool[lectureId] = this.addingLectureItem
         editedSchool[lectureId].date = parse(`${this.addingLectureItem.dateView}T${this.addingLectureItem.timeView}`)
-        console.log(this.schoolsInfo)
     }
 
 }

@@ -19,6 +19,9 @@ export default class LecturesBySchools extends Component {
                     Выберите даты и нажмите "показать" для выбора расписания школы за 
                     интересующий промежуток времени.
                 </div>
+                <div className={classes.lecturesError}>
+                    Ошибка сохранения/редактирования
+                </div>
                 <table>
                     {Object.keys(foundLectures).map(lectureId => {
                         const lecture = foundLectures[lectureId]
@@ -147,5 +150,11 @@ const styles = {
     },
     lecturesInfoAdd: {
         'margin-top': '10px'
+    },
+    lecturesError: {
+        display: 'inline-block',
+        color: '#6d4546',
+        border: '3px solid #543532',
+        'border-radius': '5px'
     }
 }
