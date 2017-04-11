@@ -110,7 +110,7 @@ const styles = {
             color: '#6d4546',
             cursor: 'pointer'
         },
-        'font-family': "Menlo, Monaco, monospace"
+        'font-family': 'Menlo, Monaco, monospace'
     },
     activeSchoolName: {
         background: '#d7c6be',
@@ -122,7 +122,7 @@ const styles = {
         width: '100%',
         color: '#060606',
         'border-collapse': 'collapse',
-        'font-family': "Menlo, Monaco, monospace"
+        'font-family': 'Menlo, Monaco, monospace'
     },
     schoolTableCommonCell: {
         width: '50px'
