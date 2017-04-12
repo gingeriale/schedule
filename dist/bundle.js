@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "a2c527440c60f173cc29"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "1c482435c4e33bced3c7"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotMainModule = true; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -9290,10 +9290,10 @@ var Header = function (_Component) {
                 return __WEBPACK_IMPORTED_MODULE_4__AppStore__["a" /* default */].setHeader(__WEBPACK_IMPORTED_MODULE_5__HeaderItems__["a" /* default */].SCHEDULE);
             },
             children: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_inferno__["createVNode"])(2, 'div', {
-                'className': __WEBPACK_IMPORTED_MODULE_3_classnames___default()('' + classes.headerItem, (_cn = {}, _cn[classes.active] = routePart === 'dule', _cn))
+                'className': __WEBPACK_IMPORTED_MODULE_3_classnames___default()('' + classes.headerItem, (_cn = {}, _cn[classes.active] = routePart === 'e/#/', _cn))
             }, '\u0420\u0430\u0441\u043F\u0438\u0441\u0430\u043D\u0438\u0435')
         }), __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_inferno__["createVNode"])(16, __WEBPACK_IMPORTED_MODULE_1_inferno_router__["Link"], {
-            'to': '#/edit',
+            'to': '/edit',
             'onClick': function onClick() {
                 return __WEBPACK_IMPORTED_MODULE_4__AppStore__["a" /* default */].setHeader(__WEBPACK_IMPORTED_MODULE_5__HeaderItems__["a" /* default */].EDIT);
             },
