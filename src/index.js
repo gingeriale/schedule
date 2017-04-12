@@ -1,7 +1,7 @@
 import {render} from 'inferno'
 
 import {Router, Route, Redirect} from 'inferno-router'
-import createBrowserHistory from 'history/createBrowserHistory'
+import createHashHistory from 'history/createHashHistory'
 
 import App from 'schedule-app/App'
 import Schedule from 'schedule-app/Schedule'
@@ -11,17 +11,13 @@ if (module.hot) {
     require('inferno-devtools')
 }
 
-const browserHistory = createBrowserHistory()
+const browserHistory = createHashHistory()
 
 const routes = (
     <Router history={browserHistory}>
         <Route component={App}>
-            <Redirect
-                from='/'
-                to='/schedule'
-            />
             <Route
-                path='/schedule'
+                path='/'
                 component={Schedule}
             />
             <Route 
