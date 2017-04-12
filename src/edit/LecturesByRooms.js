@@ -27,34 +27,10 @@ export default class LecturesByRooms extends Component {
                                 {Object.keys(lecture).map(lectureInfoItem => {
                                     return (
                                         <td>
-                                            {EditLibStore.editingLectureOfRoom === lecture.theme ? (
-                                                <input
-                                                    type="text"
-                                                    value={EditLibStore.lectureOfRoom.get(lectureInfoItem)}
-                                                    onInput={event => EditLibStore.editLectureOfRoom(lectureInfoItem, event.target.value)}
-                                                />
-                                            ) : (
-                                                lecture[lectureInfoItem]
-                                            )}
+                                            {lecture[lectureInfoItem]}
                                         </td>
                                     )
                                 })}
-                                <td>
-                                    <button 
-                                        onClick={() => EditLibStore.setLectureOfRoomEdit(lecture)}
-                                        className={classes.lecturesButton}
-                                    >
-                                        редактировать
-                                    </button>
-                                </td>
-                                <td>
-                                    <button 
-                                        onClick={() => EditLibStore.saveLectureOfRoom()}
-                                        className={classes.lecturesButton}
-                                    >
-                                        сохранить
-                                    </button>
-                                </td>
                             </tr>
                         )
                     })}
@@ -72,13 +48,5 @@ const styles = {
     },
     lecturesText: {
         'margin-bottom': '10px'
-    },
-    lecturesButton: {
-        background: '#ebcfb9',
-        border: 'none',
-        'border-radius': '5px',
-        'text-align': 'center',
-        'font-family': 'inherit',
-        cursor: 'pointer'
     }
 }

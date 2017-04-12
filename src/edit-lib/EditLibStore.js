@@ -15,12 +15,6 @@ class EditLibStore {
     schoolsInfo = observable.map(schoolsDetails)
 
     @observable
-    lectureOfRoom = null
-
-    @observable
-    editingLectureOfRoom = null
-
-    @observable
     lectureOfSchool = null
 
     @observable
@@ -31,31 +25,6 @@ class EditLibStore {
 
     @observable
     addingLectureItem = {}
-
-    @action
-    setLectureOfRoomEdit(lecture) {
-        this.lectureOfRoom = observable.map(lecture)
-        this.editingLectureOfRoom = this.lectureOfRoom.get('theme')
-    }
-
-    @action
-    editLectureOfRoom(lectureInfoItem, value) {
-        this.lectureOfRoom.set(lectureInfoItem, value)
-    }
-
-    @action
-    saveLectureOfRoom() {
-        const editedSchool = this.schoolsInfo.get(this.lectureOfRoom.get('school'))
-        const editedLecture = Object.keys(editedSchool).find(lecture => {
-            return editedSchool[lecture].theme === this.editingLectureOfRoom
-        })
-        editedSchool[editedLecture].theme = this.lectureOfRoom.get('theme')
-        editedSchool[editedLecture].dateView = this.lectureOfRoom.get('dateView')
-        editedSchool[editedLecture].timeView = this.lectureOfRoom.get('timeView')
-        editedSchool[editedLecture].date = parse(`${this.lectureOfRoom.get('dateView')}T${this.lectureOfRoom.get('timeView')}`)
-        this.lectureOfRoom = null
-        this.editingLectureOfRoom = null
-    }
 
     @action
     setLectureOfSchoolEdit(lecture) {
