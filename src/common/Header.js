@@ -17,12 +17,12 @@ export default class Header extends Component {
                     to="./"
                     onClick={() => AppStore.setHeader(HeaderItems.SCHEDULE)}
                 >
-                    <div className={cn(`${classes.headerItem}`, {[classes.active]: routePart === 'le/#/'})}>
+                    <div className={cn(`${classes.headerItem}`, {[classes.active]: routePart === 'e/#/'})}>
                         Расписание
                     </div>
                 </Link>
                 <Link 
-                    to="/edit"
+                    to="edit"
                     onClick={() => AppStore.setHeader(HeaderItems.EDIT)}
                 >
                     <div className={cn(`${classes.headerItem}`, {[classes.active]: routePart === 'edit'})}>
