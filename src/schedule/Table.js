@@ -60,7 +60,7 @@ export default class Table extends Component {
             <table className={classes.schoolTable}>
                 {Object.keys(content).map(lecture => {
                     return (
-                        <tr>
+                        <tr className={classes.schoolTableRow}>
                             <td className={classes.schoolTableCommonCell}>{content[lecture].common ? (
                                     <div className={classes.schoolTableCommon}>общая</div>
                                 ) : (
@@ -98,6 +98,10 @@ export default class Table extends Component {
 
 }
 
+const media = {
+
+}
+
 const styles = {
     schoolName: {
         display: 'inline-block',
@@ -110,7 +114,11 @@ const styles = {
             color: '#6d4546',
             cursor: 'pointer'
         },
-        'font-family': 'Menlo, Monaco, monospace'
+        'font-family': 'Menlo, Monaco, monospace',
+        'font-size': '16px',
+        '@media screen and (max-device-width: 425px)': {
+            width: '33%'
+        }
     },
     activeSchoolName: {
         background: '#d7c6be',
@@ -122,10 +130,15 @@ const styles = {
         width: '100%',
         color: '#060606',
         'border-collapse': 'collapse',
-        'font-family': 'Menlo, Monaco, monospace'
+        'font-family': 'Menlo, Monaco, monospace',
+        'font-size': '16px',
     },
     schoolTableCommonCell: {
-        width: '50px'
+        width: '50px',
+        '@media screen and (max-device-width: 425px)': {
+            display: 'block',
+            width: '170px'
+        }
     },
     schoolTableCommon: {
         width: '100%',
@@ -140,27 +153,51 @@ const styles = {
         color: '#6d4546',
         'border-bottom': '1px solid #c7c7c7',
         'border-top': '1px solid #c7c7c7',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        '@media only screen and (max-device-width: 425px)': {
+            display: 'block',
+            width: '100%'
+        }
     },
     schoolTableRoom: {
         width: '11%',
         'text-transform': 'uppercase',
         'padding-bottom': '2px',
         'border-bottom': '1px solid #c7c7c7',
-        'border-top': '1px solid #c7c7c7'
+        'border-top': '1px solid #c7c7c7',
+        '@media screen and (max-device-width: 425px)': {
+            display: 'block',
+            width: '100%'
+        }
     },
     schoolTableTheme: {
         width: '50%',
         'padding-bottom': '2px',
         'border-bottom': '1px solid #c7c7c7',
-        'border-top': '1px solid #c7c7c7'
+        'border-top': '1px solid #c7c7c7',
+        '@media screen and (max-device-width: 425px)': {
+            display: 'block',
+            width: '100%',
+            'border-top': 'none'
+        }
     },
     schoolTableDateTime: {
         'padding-bottom': '2px',
         background: '#eef0ef',
         'border-bottom': '1px solid #c7c7c7',
         'border-top': '1px solid #c7c7c7',
-        'text-align': 'center'
+        'text-align': 'center',
+        '@media screen and (max-device-width: 425px)': {
+            display: 'inline-block',
+            width: '49%',
+            background: '#fff',
+            'border-bottom': 'none'
+        }
+    },
+    schoolTableRow: {
+        '@media screen and (max-device-width: 425px)': {
+            'border-top': '10px solid #c7c7c7'
+        }
     }
 }
 
