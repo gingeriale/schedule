@@ -42,22 +42,42 @@ export default class LecturesBySchools extends Component {
                                         </td>
                                     )
                                 })}
-                                <td>
-                                    <button
-                                        onClick={() => EditLibStore.setLectureOfSchoolEdit(lecture)}
-                                        className={classes.lecturesButton}
-                                    >
-                                        редактировать
-                                    </button>
-                                </td>
-                                <td>
-                                    <button
-                                        onClick={() => EditLibStore.saveLectureOfSchool()}
-                                        className={classes.lecturesButton}                                      
-                                    >
-                                        сохранить
-                                    </button>
-                                </td>
+                                {!EditLibStore.editingLectureOfSchool ? (
+                                    <td>
+                                        <button
+                                            onClick={() => EditLibStore.setLectureOfSchoolEdit(lecture)}
+                                            className={classes.lecturesButton}
+                                        >
+                                            редактировать
+                                        </button>
+                                    </td>
+                                ) : (
+                                    null
+                                )}                                
+                                {EditLibStore.editingLectureOfSchool ? (
+                                    <td>
+                                        <button
+                                            onClick={() => EditLibStore.saveLectureOfSchool()}
+                                            className={classes.lecturesButton}                                      
+                                        >
+                                            сохранить
+                                        </button>
+                                    </td>
+                                ) : (
+                                    null
+                                )}
+                                {EditLibStore.editingLectureOfSchool ? (
+                                    <td>
+                                        <button
+                                            onClick={() => EditLibStore.cancelEditingLecture()}
+                                            className={classes.lecturesButton}                                      
+                                        >
+                                            отмена
+                                        </button>
+                                    </td>
+                                ) : (
+                                    null
+                                )}
                             </tr>
                         )
                     })}

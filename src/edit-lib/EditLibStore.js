@@ -26,10 +26,20 @@ class EditLibStore {
     @observable
     addingLectureItem = {}
 
+    @observable
+    error = observable.shallowArray([])
+
     @action
     setLectureOfSchoolEdit(lecture) {
+        this.error.clear()
         this.lectureOfSchool = observable.map(lecture)
         this.editingLectureOfSchool = this.lectureOfSchool.get('theme')
+    }
+
+    @action
+    cancelEditingLecture() {
+        this.lectureOfSchool = null
+        this.editingLectureOfSchool = null
     }
 
     @action
@@ -43,14 +53,24 @@ class EditLibStore {
         const editedLecture = Object.keys(editedSchool).find(lecture => {
             return editedSchool[lecture].theme === this.editingLectureOfSchool
         })
+        if (!checkRoomCapacity(EditStore.school, this.lectureOfSchool.get('room'))) {
+            this.error.push('вместимость аудитории недостаточна')
+        }
+        if (!checkSchoolLoading(EditStore.school, this.getDateFromDateTimeView(), editedLecture)) {
+            this.error.push('у школы уже есть лекция в это время')
+        }
+        if (!checkRoomLoading(EditStore.school, this.lectureOfSchool.get('room'), this.getDateFromDateTimeView(), editedLecture)) {
+            this.error.push('в аудитории уже есть лекция в это время')
+        }
+        console.log(this.error, this.error.length)
         console.log('roomCapacity', checkRoomCapacity(EditStore.school, this.lectureOfSchool.get('room')))
-        console.log('schoolLoading', checkSchoolLoading(EditStore.school, parse(`${this.lectureOfSchool.get('dateView')}T${this.lectureOfSchool.get('timeView')}`), editedLecture))
-        console.log('roomLoading', checkRoomLoading(EditStore.school, this.lectureOfSchool.get('room'), parse(`${this.lectureOfSchool.get('dateView')}T${this.lectureOfSchool.get('timeView')}`), editedLecture))
+        console.log('schoolLoading', checkSchoolLoading(EditStore.school, this.getDateFromDateTimeView(), editedLecture))
+        console.log('roomLoading', checkRoomLoading(EditStore.school, this.lectureOfSchool.get('room'), this.getDateFromDateTimeView(), editedLecture))
         editedSchool[editedLecture].room = this.lectureOfSchool.get('room')
         editedSchool[editedLecture].theme = this.lectureOfSchool.get('theme')
         editedSchool[editedLecture].dateView = this.lectureOfSchool.get('dateView')
         editedSchool[editedLecture].timeView = this.lectureOfSchool.get('timeView')
-        editedSchool[editedLecture].date = parse(`${this.lectureOfSchool.get('dateView')}T${this.lectureOfSchool.get('timeView')}`)
+        editedSchool[editedLecture].date = this.getDateFromDateTimeView()
         this.lectureOfSchool = null
         this.editingLectureOfSchool = null
     }
@@ -84,6 +104,10 @@ class EditLibStore {
         const lectureId = Object.keys(editedSchool).length + 1
         editedSchool[lectureId] = this.addingLectureItem
         editedSchool[lectureId].date = parse(`${this.addingLectureItem.dateView}T${this.addingLectureItem.timeView}`)
+    }
+
+    getDateFromDateTimeView() {
+        return parse(`${this.lectureOfSchool.get('dateView')}T${this.lectureOfSchool.get('timeView')}`)
     }
 
 }
