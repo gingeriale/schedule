@@ -1,6 +1,7 @@
 import Component from 'inferno-component'
 import {observer} from 'inferno-mobx'
 import jss from 'jss'
+import nested from 'jss-nested'
 
 import EditStore from 'schedule-app/edit/EditStore'
 import {findLecturesBySchool} from 'edit-lib/findLectures'
@@ -19,9 +20,21 @@ export default class LecturesBySchools extends Component {
                     Выберите даты и нажмите "показать" для выбора расписания школы за 
                     интересующий промежуток времени.
                 </div>
-                <div className={classes.lecturesError}>
-                    Ошибка сохранения/редактирования
-                </div>
+                {EditLibStore.error.length !== 0 ? (
+                    <div 
+                        className={classes.lecturesError}
+                        onClick={() => EditLibStore.clearError()}
+                    >
+                        Ошибка сохранения/редактирования:<br/>
+                        {EditLibStore.error.map(error => {
+                            return (
+                                <div> - {error}</div>
+                            )
+                        })}
+                    </div>
+                ) : (
+                    null
+                )}                
                 <table>
                     {Object.keys(foundLectures).map(lectureId => {
                         const lecture = foundLectures[lectureId]
@@ -175,6 +188,12 @@ const styles = {
         display: 'inline-block',
         color: '#6d4546',
         border: '3px solid #543532',
-        'border-radius': '5px'
+        'border-radius': '5px',
+        cursor: 'pointer',
+        '&:hover': {
+            background: '#ebcfb9'
+        }
     }
 }
+
+jss.use(nested())

@@ -31,9 +31,14 @@ class EditLibStore {
 
     @action
     setLectureOfSchoolEdit(lecture) {
-        this.error.clear()
+        this.clearError()
         this.lectureOfSchool = observable.map(lecture)
         this.editingLectureOfSchool = this.lectureOfSchool.get('theme')
+    }
+
+    @action
+    clearError() {
+        this.error.clear()
     }
 
     @action
@@ -56,38 +61,36 @@ class EditLibStore {
         if (!checkRoomCapacity(EditStore.school, this.lectureOfSchool.get('room'))) {
             this.error.push('вместимость аудитории недостаточна')
         }
-        if (!checkSchoolLoading(EditStore.school, this.getDateFromDateTimeView(), editedLecture)) {
+        if (!checkSchoolLoading(EditStore.school, this.getDateFromDateTimeViewEdit(), editedLecture)) {
             this.error.push('у школы уже есть лекция в это время')
         }
-        if (!checkRoomLoading(EditStore.school, this.lectureOfSchool.get('room'), this.getDateFromDateTimeView(), editedLecture)) {
+        if (!checkRoomLoading(EditStore.school, this.lectureOfSchool.get('room'), this.getDateFromDateTimeViewEdit(), editedLecture)) {
             this.error.push('в аудитории уже есть лекция в это время')
         }
-        console.log(this.error, this.error.length)
-        console.log('roomCapacity', checkRoomCapacity(EditStore.school, this.lectureOfSchool.get('room')))
-        console.log('schoolLoading', checkSchoolLoading(EditStore.school, this.getDateFromDateTimeView(), editedLecture))
-        console.log('roomLoading', checkRoomLoading(EditStore.school, this.lectureOfSchool.get('room'), this.getDateFromDateTimeView(), editedLecture))
+        if (this.error.length !== 0) {
+            this.cancelEditingLecture()
+            return
+        }
         editedSchool[editedLecture].room = this.lectureOfSchool.get('room')
         editedSchool[editedLecture].theme = this.lectureOfSchool.get('theme')
         editedSchool[editedLecture].dateView = this.lectureOfSchool.get('dateView')
         editedSchool[editedLecture].timeView = this.lectureOfSchool.get('timeView')
-        editedSchool[editedLecture].date = this.getDateFromDateTimeView()
-        this.lectureOfSchool = null
-        this.editingLectureOfSchool = null
+        editedSchool[editedLecture].date = this.getDateFromDateTimeViewEdit()
+        this.cancelEditingLecture()
     }
 
     @action
     changeAddingLectureState() {
-        if (this.addingLectureState) {
-            this.addLecture()
-            this.addingLectureItem = {}
-        }
         this.addingLectureState = !this.addingLectureState
+        if (!this.addingLectureState) {
+            this.addLecture()
+        }
     }
 
     @action
     cancelAddingLecture() {
-        this.addingLectureItem = {}
         this.addingLectureState = false
+        this.addingLectureItem = {}
     }
 
     @action
@@ -101,13 +104,31 @@ class EditLibStore {
             return
         }
         const editedSchool = this.schoolsInfo.get(EditStore.school)
+        if (!checkRoomCapacity(EditStore.school, this.addingLectureItem.room)) {
+            this.error.push('вместимость аудитории недостаточна')
+        }
+        if (!checkSchoolLoading(EditStore.school, this.getDateFromDateTimeViewAdd())) {
+            this.error.push('у школы уже есть лекция в это время')
+        }
+        if (!checkRoomLoading(EditStore.school, this.addingLectureItem.room, this.getDateFromDateTimeViewAdd())) {
+            this.error.push('в аудитории уже есть лекция в это время')
+        }
+        if (this.error.length !== 0) {
+            this.cancelAddingLecture()
+            return
+        }
         const lectureId = Object.keys(editedSchool).length + 1
         editedSchool[lectureId] = this.addingLectureItem
-        editedSchool[lectureId].date = parse(`${this.addingLectureItem.dateView}T${this.addingLectureItem.timeView}`)
+        editedSchool[lectureId].date = this.getDateFromDateTimeViewAdd()
+        this.cancelAddingLecture()
     }
 
-    getDateFromDateTimeView() {
+    getDateFromDateTimeViewEdit() {
         return parse(`${this.lectureOfSchool.get('dateView')}T${this.lectureOfSchool.get('timeView')}`)
+    }
+
+    getDateFromDateTimeViewAdd() {
+        return parse(`${this.addingLectureItem.dateView}T${this.addingLectureItem.timeView}`)
     }
 
 }
