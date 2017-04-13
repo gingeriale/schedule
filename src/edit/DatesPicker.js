@@ -4,6 +4,9 @@ import jss from 'jss'
 
 import EditStore from 'schedule-app/edit/EditStore'
 
+// рендер инпутов для фильтрации расписаний по дате и кнопки, по нажатию на которую срабатывает обработчик,
+// инициирующий фильтрацию
+
 @observer
 export default class DatesPicker extends Component {
 

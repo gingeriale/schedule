@@ -1,3 +1,5 @@
+// информация о количестве учеников в школах
+
 const amountDetails = {
     INTERFACE: 42,
     MOBILE: 40,

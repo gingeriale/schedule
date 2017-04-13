@@ -8,6 +8,10 @@ import HeaderItems from 'schedule-app/common/HeaderItems'
 
 export default class Header extends Component {
 
+    // рендер хедера с переключателями между заданиями 1 и 2
+    // содержит ссылки роутинга для переключения с обработчиками для изменения поля стора,
+    // отвечающего за хранение и обработку информации о состоянии переключателя
+
     render() {
         const {classes} = jss.createStyleSheet(styles).attach()
         const routePart = window.location.href.slice(-4)

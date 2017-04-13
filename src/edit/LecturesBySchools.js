@@ -7,6 +7,10 @@ import EditStore from 'schedule-app/edit/EditStore'
 import {findLecturesBySchool} from 'edit-lib/findLectures'
 import EditLibStore from 'edit-lib/EditLibStore'
 
+// рендер таблицы с отфильтрованными лекциями для выбранной школы
+// рендер кнопок и инпутов для добавления лекций и редактирования
+// отображение окна ошибки в случае невыполнения условий успешного добавления/редактирования
+
 @observer
 export default class LecturesBySchools extends Component {
 

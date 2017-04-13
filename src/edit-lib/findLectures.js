@@ -3,6 +3,17 @@ import {compareAsc, parse} from 'date-fns'
 import schoolsDetails from 'edit-lib/schoolsDetails'
 import EditLibStore from 'edit-lib/EditLibStore'
 
+/**
+ * поиск лекций в аудитории в заданный интервал дат.
+ * для каждой лекции каждой школы проверяем ее попадание в интервал дат и добавляем в случае попадания
+ * информацию о ней в возвращаемый объект.
+ * также добавляем проверку на факт наличия данной лекции в возвращаемом объекте - значит, лекция общая, 
+ * корректируем информацию о школе, добавляемой в объект.
+ * @param  {string} room
+ * @param  {Object} begin - дата
+ * @param  {Object} end - дата
+ * @return {Object.<string, string, string, string>} -  школа, тема, дата и время для отображения
+ */
 const findLecturesByRoom = (room, begin, end) => {
     const foundLectures = {}
     EditLibStore.schoolsInfo.keys().forEach(school => {
@@ -29,6 +40,15 @@ const findLecturesByRoom = (room, begin, end) => {
     return foundLectures
 }
 
+/**
+ * поиск лекций школы в заданный интервал дат.
+ * из информации о школе берем список ее лекций и проверяем каждую на попадание в интервал дат.
+ * при попадании добавляем в возвращаемый объект информацию о лекии (аудитория, тема, дата и время для отображения)
+ * @param  {string} school
+ * @param  {Object} begin - дата
+ * @param  {Object} end - дата
+ * @return {Object.<string, string, string, string>} -  школа, тема, дата и время для отображения
+ */
 const findLecturesBySchool = (school, begin, end) => {
     const foundLectures = {}
     Object.keys(EditLibStore.schoolsInfo.get(school)).forEach(lectureNumber => {
@@ -45,6 +65,14 @@ const findLecturesBySchool = (school, begin, end) => {
     return foundLectures
 }
 
+/**
+ * проверка, попадает ли лекция в заданный интервал дат.
+ * для упрощения сравнений используется библиотека date-fns
+ * @param  {Object} begin - дата
+ * @param  {Object} end - дата
+ * @param  {Object} lectureDate - дата
+ * @return {boolean}
+ */
 const filterByDates = (begin, end, lectureDate) => {
     switch (true) {
         case !begin && !end:
@@ -69,6 +97,13 @@ const filterByDates = (begin, end, lectureDate) => {
     }
 }
 
+/**
+ * вспомогательная функция для получения объекта даты из пользовательского ввода дня и месяца для фильтрации. 
+ * полагаем, что год 2017. 
+ * время ставим 23:59 для корректного сравнения с датами лекций
+ * @param  {string} date
+ * @return {Object} - дата
+ */
  const parseDate = (date) => {
     return parse(`${date.slice(3)}.${date.slice(0, 3)}.2017 23:59`)
 }

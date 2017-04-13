@@ -1,3 +1,5 @@
+// информация об аудиториях
+
 const roomsDetails = {
     blue: {
         name: 'Синяя',

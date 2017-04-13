@@ -4,6 +4,8 @@ import ru from 'date-fns/locale/ru'
 import formatDate from 'schedule-app/common/util/formatDate'
 import formatTime from 'schedule-app/common/util/formatTime'
 
+// информации о школах
+
 const schoolsDetails = {
     INTERFACE: {
         1: {

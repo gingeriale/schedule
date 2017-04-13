@@ -13,6 +13,8 @@ import SpeakerInfo from 'schedule-app/schedule/SpeakerInfo'
 @observer
 export default class Table extends Component {
 
+// рендер переключалки между школами, расписания школы в зависимости от состояния переключалки, всплывающего окна с инфо о спикере
+
     render() {
         const {classes} = jss.createStyleSheet(styles).attach()
         return (
@@ -52,6 +54,11 @@ export default class Table extends Component {
             </div>
         )
     }
+
+    // метод получает название школы, достает из стора редактирования данные об этой школе и возвращает таблицу
+    // с расписанием на основе полученных из стора данных.
+    // при генерации таблицы проверяет, прошла ли лекция, и если да, то вместо даты и времени отображает ссылку на материалы.
+    // на ячейку с именем спикера добавляет обработчик для отображения окна с инфой о нем.
 
     renderContent(school) {
         const {classes} = jss.createStyleSheet(styles).attach()
@@ -95,10 +102,6 @@ export default class Table extends Component {
             </table>
         )
     }
-
-}
-
-const media = {
 
 }
 

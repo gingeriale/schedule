@@ -13,6 +13,8 @@ if (module.hot) {
 
 const browserHistory = createBrowserHistory()
 
+// роутинг: переключение между расписанием (задание 1) и редактированием данных (задание 2) 
+
 const routes = (
     <Router history={browserHistory}>
         <Route component={App}>

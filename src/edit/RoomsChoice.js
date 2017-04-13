@@ -6,6 +6,9 @@ import EditStore from 'schedule-app/edit/EditStore'
 import roomsDetails from 'edit-lib/roomsDetails'
 import tabs from 'schedule-app/edit/Tabs'
 
+// рендер селекта для выбора аудитории для отображения ее отфильтрованного расписания
+// и кнопки, переключающей выбор на фильтрацию по школам
+
 @observer
 export default class Rooms extends Component {
 

@@ -6,6 +6,8 @@ import EditStore from 'schedule-app/edit/EditStore'
 import {findLecturesByRoom} from 'edit-lib/findLectures'
 import EditLibStore from 'edit-lib/EditLibStore'
 
+// рендер таблицы с отфильтрованными лекциями для выбранной аудитории
+
 @observer
 export default class LecturesByRooms extends Component {
 
